@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — {{APP_NAME}}</title>
+    
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #4f46e5;
+            --accent-hover: #4338ca;
+            --accent-light: #e0e7ff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+            --card-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-light: #1e1b4b;
+            --border: #1f2937;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: var(--transition);
+        }
+
+        /* Layout */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 968px) {
+            .app-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 24px 16px;
+            }
+        }
+
+        /* Navigation Header */
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .brand-name h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .brand-name p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        @media (max-width: 968px) {
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        .toc-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .toc-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-link {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--accent);
+            background-color: var(--bg-primary);
+            border-left-color: var(--accent);
+            padding-left: 16px;
+        }
+
+        /* Content Area */
+        .content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 24px 16px;
+            }
+        }
+
+        .title-section {
+            margin-bottom: 32px;
+        }
+
+        .title-section h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Highlights / Short Summary card */
+        .summary-card {
+            background: linear-gradient(135deg, var(--accent-light), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent);
+        }
+
+        .summary-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-text {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        /* Typography inside Content */
+        .doc-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 40px;
+        }
+
+        .doc-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .doc-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--text-primary);
+        }
+
+        .doc-section p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        .doc-section ul, .doc-section ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        .doc-section li {
+            margin-bottom: 8px;
+        }
+
+        .doc-section a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted var(--accent);
+            transition: var(--transition);
+        }
+
+        .doc-section a:hover {
+            color: var(--accent-hover);
+            border-bottom-style: solid;
+        }
+
+        /* Modern Tables */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-weight: 600;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Contact Details Card */
+        .contact-box {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-box strong {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .highlight-var {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: 600;
+        }
+        [data-theme="dark"] .highlight-var {
+            background-color: #854d0e;
+            color: #fef08a;
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="app-container">
+    
+    <!-- Top Brand Header -->
+    <header>
+        <a href="{{DEVELOPER_WEBSITE}}" class="brand">
+            <div class="brand-logo">{{LOGO_INITIAL}}</div>
+            <div class="brand-name">
+                <h1>{{DEVELOPER_NAME}}</h1>
+                <p>Applications Privacy Center</p>
+            </div>
+        </a>
+        <div class="controls">
+            <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode">
+                <!-- Sun Icon -->
+                <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+                <!-- Moon Icon -->
+                <svg id="moonIcon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 12.83A9.53 9.53 0 0 1 12 21.75c-5.285 0-9.75-4.265-9.75-9.75a9.53 9.53 0 0 1 8.92-9.749 8.25 8.25 0 0 0 10.58 10.58h-.001Z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar TOC -->
+    <aside class="sidebar">
+        <div class="toc-card">
+            <div class="toc-title">ON THIS PAGE</div>
+            <ul class="toc-list">
+                <li><a href="#about" class="toc-link">1. What {{APP_NAME}} Is</a></li>
+                <li><a href="#collection" class="toc-link">2. Information We Collect</a></li>
+                <li><a href="#usage" class="toc-link">3. How Your Data Is Used</a></li>
+                <li><a href="#thirdparty" class="toc-link">4. Third-Party Services</a></li>
+                <li><a href="#ads" class="toc-link">5. Advertising & Analytics</a></li>
+                <li><a href="#payments" class="toc-link">6. Payments (If Applicable)</a></li>
+                <li><a href="#sharing" class="toc-link">7. Data Sharing</a></li>
+                <li><a href="#rights" class="toc-link">8. Your Rights</a></li>
+                <li><a href="#children" class="toc-link">9. Children's Privacy</a></li>
+                <li><a href="#security" class="toc-link">10. Security & Retention</a></li>
+                <li><a href="#contact" class="toc-link">11. Contact Info</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        <div class="title-section">
+            <h2>Privacy Policy</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 500;"><span class="highlight-var">{{APP_NAME}}</span> — Developed by <span class="highlight-var">{{DEVELOPER_NAME}}</span></p>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    Effective: <span class="highlight-var">{{EFFECTIVE_DATE}}</span>
+                </div>
+                <div class="meta-item">
+                    <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V5"/></svg>
+                    Updated: <span class="highlight-var">{{LAST_UPDATED_DATE}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-title">
+                <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                In Short (TL;DR)
+            </div>
+            <div class="summary-text">
+                <span class="highlight-var">{{SHORT_PRIVACY_SUMMARY}}</span>
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <section id="about" class="doc-section">
+            <h3>1. What {{APP_NAME}} Is</h3>
+            <p>{{APP_NAME}} is a mobile application that <span class="highlight-var">{{APP_DESCRIPTION_AND_PURPOSE}}</span>.</p>
+            <p>The App is developed, owned, and operated by <strong>{{DEVELOPER_NAME}}</strong>.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="collection" class="doc-section">
+            <h3>2. Information We Collect</h3>
+            
+            <h4>2.1 Data You Provide Voluntarily</h4>
+            <p>We collect and store data that you explicitly enter inside the App. Depending on your configuration, this may remain stored purely locally on your device or be synchronized with a remote server:</p>
+            <ul>
+                <li><span class="highlight-var">{{USER_ENTERED_DATA_EXAMPLES_E_G_PROFILE_DATA_PREFERENCES}}</span></li>
+            </ul>
+
+            <h4>2.2 Data Collected Automatically by Third Parties / Services</h4>
+            <p>To support application telemetry, diagnostic logging, and monetization services, the following third-party integrations may collect diagnostic or identification parameters:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data Category</th>
+                            <th>Third-Party Provider</th>
+                            <th>Primary Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="highlight-var">{{DATA_TYPE_E_G_ADVERT_ID}}</span></td>
+                            <td><span class="highlight-var">{{PROVIDER_NAME_E_G_ADMOB}}</span></td>
+                            <td><span class="highlight-var">{{PURPOSE_E_G_PERSONALIZED_ADS}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight-var">{{DATA_TYPE_E_G_CRASH_LOGS}}</span></td>
+                            <td><span class="highlight-var">{{PROVIDER_NAME_E_G_FIREBASE}}</span></td>
+                            <td><span class="highlight-var">{{PURPOSE_E_G_BUG_FIXING}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.3 What We Do NOT Collect</h4>
+            <p>We prioritize your privacy and do not request access to unrelated device systems. We do not access or collect:</p>
+            <ul>
+                <li>Precise GPS location unless strictly required and authorized.</li>
+                <li>Your contacts, photos, or media files.</li>
+                <li>Sensitive personal financial information (unless processed securely by payment gateways).</li>
+            </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="usage" class="doc-section">
+            <h3>3. How Your Data Is Used</h3>
+            <p>We use the collected information for the following specific purposes:</p>
+            <ul>
+                <li>To provide and maintain the core functionalities of the App.</li>
+                <li>To personalize your user experience and settings.</li>
+                <li>To troubleshoot, optimize performance, and resolve system crashes.</li>
+                <li>To monitor usage statistics to improve application architecture.</li>
+            </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="thirdparty" class="doc-section">
+            <h3>4. Third-Party Services</h3>
+            <p>Please review the individual privacy policies of the vendors we use within the App to understand their handling policies:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th>Provider</th>
+                            <th>Privacy Policy Reference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="highlight-var">{{SERVICE_NAME_E_G_FIREBASE}}</span></td>
+                            <td><span class="highlight-var">{{PROVIDER_E_G_GOOGLE}}</span></td>
+                            <td><a href="{{PRIVACY_POLICY_URL}}" target="_blank" rel="noopener noreferrer">Link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="ads" class="doc-section">
+            <h3>5. Advertising & Analytics</h3>
+            <p>If the App serves advertising or utilizes analytics, tracking identifiers are processed according to standard network protocols. You can manage or disable tracking using your device settings:</p>
+            <ul>
+                <li><strong>Android:</strong> Settings &gt; Google &gt; Ads &gt; Reset/Delete Advertising ID.</li>
+                <li><strong>iOS:</strong> Settings &gt; Privacy & Security &gt; Tracking &gt; Toggle off permissions.</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="payments" class="doc-section">
+            <h3>6. Payments (If Applicable)</h3>
+            <p>If the App includes paid content or subscriptions, all billing events are processed securely via the App Store (Apple App Store / Google Play Store) or official payment gateways. We do not store or process card numbers on our servers.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="sharing" class="doc-section">
+            <h3>7. Data Sharing</h3>
+            <p>We <strong>do not sell, trade, or rent</strong> your personal data. Sharing only occurs with the trusted third-party providers mentioned in Section 4 to facilitate app operations, or if mandated by law enforcement.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="rights" class="doc-section">
+            <h3>8. Your Rights</h3>
+            <p>Depending on your geographic location (e.g. EU/EEA under GDPR, California under CCPA/CPRA, etc.), you have specific statutory rights concerning your personal information, including the right to access, rectify, port, or request erasure of your data.</p>
+            <p>To exercise any of your rights, please reach out to us at <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="children" class="doc-section">
+            <h3>9. Children's Privacy</h3>
+            <p>We do not knowingly target or collect personal information from children under the age of 13. If you become aware that a child has provided us with personal data, please notify us immediately so we can remove it.</p>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="security" class="doc-section">
+            <h3>10. Security & Retention</h3>
+            
+            <h4>10.1 Data Security</h4>
+            <p>We utilize standard industry practices, including encryption in transit and rest (SSL/TLS), to safeguard data interactions. However, no electronic transmission or storage method is 100% secure.</p>
+            
+            <h4>10.2 Data Retention</h4>
+            <p>We retain your personal data only as long as necessary to fulfill the operational requirements of the App, comply with regulatory requirements, or resolve disputes.</p>
+        </section>
+
+        <!-- Section 11 -->
+        <section id="contact" class="doc-section">
+            <h3>11. Contact Info</h3>
+            <p>For inquiries, support, or data privacy requests, you can reach us at:</p>
+            
+            <div class="contact-box">
+                <strong>{{DEVELOPER_NAME}}</strong>
+                <p>Email: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+                <p>Website: <a href="{{DEVELOPER_WEBSITE}}" target="_blank" rel="noopener noreferrer">{{DEVELOPER_WEBSITE_DISPLAY}}</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; {{CURRENT_YEAR}} {{DEVELOPER_NAME}}. All rights reserved.</p>
+        <p style="font-size: 0.75rem; opacity: 0.8;">{{APP_NAME}} &mdash; Package/ID: {{APP_PACKAGE_ID}}</p>
+    </footer>
+</div>
+
+<script>
+    // Theme switcher logic
+    const body = document.body;
+    const themeBtn = document.getElementById('themeBtn');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+
+    function setTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+
+    // Scroll active link styling
+    const sections = document.querySelectorAll('.doc-section');
+    const navLinks = document.querySelectorAll('.toc-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= (sectionTop - 120)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
