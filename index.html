@@ -3,126 +3,264 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novus HQ</title>
+  <title>Novus HQ — We Build Premium Apps at Lightspeed</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Novus HQ is an indie Android app studio shipping beautiful utility, productivity, and finance apps at high speed with local-first privacy." />
+  
+  <!-- Typography & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #080a0f;
-      --text: #e8eaf0;
-      --muted: #4b5563;
-      --accent: #7fffb2;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Syne', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(127,255,178,0.07) 0%, transparent 70%);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none; z-index: 0;
-      filter: blur(60px);
-    }
-    .container {
-      position: relative; z-index: 1;
-      text-align: center;
-      padding: 40px 24px;
-      animation: fade-up 0.8s ease both;
-    }
-    .logo {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 64px;
-    }
-    .logo-mark {
-      width: 36px; height: 36px;
-      background: var(--accent); color: #000;
-      font-weight: 800; font-size: 18px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 8px;
-    }
-    .logo-text { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
-    .logo-hq { color: var(--accent); }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px; letter-spacing: 0.1em;
-      color: var(--accent);
-      border: 1px solid rgba(127,255,178,0.2);
-      background: rgba(127,255,178,0.06);
-      padding: 6px 14px; border-radius: 40px;
-      margin-bottom: 36px;
-    }
-    .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    h1 {
-      font-size: clamp(40px, 8vw, 88px);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      margin-bottom: 24px;
-    }
-    h1 em { font-style: italic; color: var(--accent); }
-    p {
-      font-family: 'DM Mono', monospace;
-      font-size: 15px; font-weight: 300;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .footer-note {
-      position: fixed; bottom: 32px;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px; color: var(--muted);
-      letter-spacing: 0.04em;
-      z-index: 1;
-    }
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    /* Prevent standard cursor to allow custom cursor */
+    body, a, button {
+      cursor: none !important;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <div class="logo-mark">N</div>
-      <span class="logo-text">NOVUS<span class="logo-hq">HQ</span></span>
+  <!-- Overlay noise and grids -->
+  <div class="noise"></div>
+  <div class="grid-bg"></div>
+
+  <!-- Ambient background glow orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav">
+    <a href="#" class="nav-logo" id="navLogo">
+      <svg class="logo-svg" width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+        <defs>
+          <linearGradient id="novusLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7fffb2" />
+            <stop offset="100%" stop-color="#00e5ff" />
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="24" fill="rgba(127,255,178,0.1)" stroke="url(#novusLogoGrad)" stroke-width="6"/>
+        <path d="M30 70V30L55 52.5L30 39V70" fill="url(#novusLogoGrad)"/>
+        <path d="M70 30V70L45 47.5L70 61V30" fill="url(#novusLogoGrad)" opacity="0.8"/>
+      </svg>
+      <span>NOVUS<span class="logo-hq">HQ</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Our Apps</a>
+      <a href="#contact" class="nav-cta">Say Hello</a>
     </div>
-    <div class="badge">
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-tag">
       <span class="dot"></span>
-      UNDER CONSTRUCTION
+      NOW ONLINE — SUBTRACK
     </div>
-    <h1>We build<br /><em>apps.</em></h1>
-    <p>Something great is on the way.</p>
-    <p>Check back soon.</p>
+    <h1 class="hero-title">
+      <span class="line">We craft</span>
+      <span class="line">exquisite <span class="accent">apps.</span></span>
+      <span class="line">Built for speed.</span>
+    </h1>
+    <p class="hero-sub">
+      Novus HQ is an independent Android app studio pushing high-quality utility, finance, and productivity apps at lightspeed.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">Explore Apps</a>
+      <a href="#about" class="btn-ghost">Our Philosophy</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" data-target="1">0</div>
+        <div class="stat-label">APPS PUBLISHED</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" data-target="2">0</div>
+        <div class="stat-label">IN PIPELINE</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" data-target="10">0</div>
+        <div class="stat-label">K+ EXPECTED USERS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrolling Marquee Banner -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>SubTrack</span>
+      <span class="sep">•</span>
+      <span>Utilities</span>
+      <span class="sep">•</span>
+      <span>Indie Dev</span>
+      <span class="sep">•</span>
+      <span>Aesthetics</span>
+      <span class="sep">•</span>
+      <span>Android First</span>
+      <span class="sep">•</span>
+      <span>Finance</span>
+      <span class="sep">•</span>
+      <span>Productivity</span>
+      <span class="sep">•</span>
+      <span>SubTrack</span>
+      <span class="sep">•</span>
+      <span>Utilities</span>
+      <span class="sep">•</span>
+      <span>Indie Dev</span>
+      <span class="sep">•</span>
+      <span>Aesthetics</span>
+      <span class="sep">•</span>
+      <span>Android First</span>
+      <span class="sep">•</span>
+      <span>Finance</span>
+      <span class="sep">•</span>
+      <span>Productivity</span>
+    </div>
   </div>
-  <div class="footer-note">novushq.app</div>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="section-label">OUR PHILOSOPHY</div>
+    <div class="about-grid">
+      <h2 class="section-title">Pushing quality apps at <em>lightspeed.</em></h2>
+      <div class="about-right">
+        <p>We believe in high-velocity indie execution. By building and shipping multiple Android apps a month, we iterate rapidly to find true utility and product-market fit.</p>
+        <p>No bloated features, no corporate sluggishness. Just highly-focused, beautiful utilities designed to make your daily tasks smoother.</p>
+        <div class="capabilities">
+          <div class="cap-item">
+            <span class="cap-num">01</span>
+            Clean Typography & Aesthetics
+          </div>
+          <div class="cap-item">
+            <span class="cap-num">02</span>
+            Local-First Privacy Architecture
+          </div>
+          <div class="cap-item">
+            <span class="cap-num">03</span>
+            High-Speed Shipping Philosophy
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work (Portfolio) Section -->
+  <section id="work" class="work">
+    <h2 class="section-title">Selected <em>works.</em></h2>
+    <div class="work-grid">
+      <!-- Subtrack App Card -->
+      <div class="work-card work-card--large" onclick="location.href='./applications/android/Subtrack/index.html'">
+        <div class="work-card-inner">
+          <div class="work-card-bg" style="--hue: 145;"></div>
+          <div class="work-meta">
+            <span class="work-tag">FINANCE / UTILITIES</span>
+            <span class="work-year">2026</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; margin: 16px 0 8px 0;">
+            <svg class="app-logo-svg" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="subtrackCardLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#7fffb2" />
+                  <stop offset="100%" stop-color="#8b5cf6" />
+                </linearGradient>
+              </defs>
+              <rect width="100" height="100" rx="24" fill="#111827" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="30" stroke="url(#subtrackCardLogoGrad)" stroke-width="8" stroke-dasharray="140 40"/>
+              <path d="M68 38L78 48L68 58" stroke="url(#subtrackCardLogoGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 style="margin-bottom: 0;">SubTrack</h3>
+          </div>
+          <p>Track and manage your subscription expenses locally and privately with beautiful reports.</p>
+          <a href="./applications/android/Subtrack/index.html" class="work-link">View App Details →</a>
+        </div>
+      </div>
+
+      <!-- Placeholder Card 1 -->
+      <div class="work-card">
+        <div class="work-card-inner">
+          <div class="work-card-bg" style="--hue: 280;"></div>
+          <div class="work-meta">
+            <span class="work-tag font-mono">PRODUCTIVITY</span>
+            <span class="work-year">COMING SOON</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; margin: 16px 0 8px 0;">
+            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="focusLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff6b6b" />
+                  <stop offset="100%" stop-color="#ff8e53" />
+                </linearGradient>
+              </defs>
+              <rect width="100" height="100" rx="24" fill="#111827" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="28" stroke="url(#focusLogoGrad)" stroke-width="8" stroke-dasharray="120 50"/>
+              <circle cx="50" cy="50" r="8" fill="url(#focusLogoGrad)" />
+            </svg>
+            <h3 style="margin-bottom: 0;">FocusHQ</h3>
+          </div>
+          <p>Minimalist focus timer and task blocker designed to cultivate deep flow states.</p>
+          <span class="work-link" style="opacity: 0.5;">In Pipeline</span>
+        </div>
+      </div>
+
+      <!-- Placeholder Card 2 -->
+      <div class="work-card">
+        <div class="work-card-inner">
+          <div class="work-card-bg" style="--hue: 210;"></div>
+          <div class="work-meta">
+            <span class="work-tag font-mono">UTILITIES</span>
+            <span class="work-year">COMING SOON</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; margin: 16px 0 8px 0;">
+            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="spaceLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00f2fe" />
+                  <stop offset="100%" stop-color="#4facfe" />
+                </linearGradient>
+              </defs>
+              <rect width="100" height="100" rx="24" fill="#111827" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+              <rect x="30" y="30" width="40" height="40" rx="6" stroke="url(#spaceLogoGrad)" stroke-width="8"/>
+              <line x1="30" y1="50" x2="70" y2="50" stroke="url(#spaceLogoGrad)" stroke-width="6"/>
+            </svg>
+            <h3 style="margin-bottom: 0;">SpaceHQ</h3>
+          </div>
+          <p>Sleek Android storage utility to clean cache and optimize local filesystem space.</p>
+          <span class="work-link" style="opacity: 0.5;">In Pipeline</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+      <h2 class="contact-title">Let's craft <br />something new.</h2>
+      <p class="contact-sub">Have an app suggestion or want to collaborate with Novus HQ?</p>
+      <a href="mailto:support@novushq.app" class="contact-cta">
+        support@novushq.app
+        <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-left">
+      &copy; 2026 Novus HQ. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Apps</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
 </body>
 </html>

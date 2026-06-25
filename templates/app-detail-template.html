@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SubTrack — Subscription Tracker & Manager</title>
+    <title>{{APP_NAME}} — {{APP_TAGLINE}}</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Take control of your subscription expenses with SubTrack. Track, manage, and analyze your recurring bills locally on your device with complete privacy and stunning visual dashboards.">
+    <meta name="description" content="{{APP_DESCRIPTION}}">
     
     <!-- Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,7 +205,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #000;
             font-weight: 800;
         }
@@ -639,7 +639,7 @@
 <div class="container">
     <!-- Top Header -->
     <header>
-        <a href="../../../index.html" class="brand">
+        <a href="{{DEVELOPER_WEBSITE}}" class="brand">
             <svg class="logo-svg" width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
                 <defs>
                     <linearGradient id="novusLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -654,7 +654,7 @@
             <div class="brand-name">NOVUS<span>HQ</span></div>
         </a>
         <div class="controls">
-            <a href="../../../index.html" class="btn-back">← Back to HQ</a>
+            <a href="{{DEVELOPER_WEBSITE}}" class="btn-back">← Back to HQ</a>
             <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode">
                 <!-- Sun Icon -->
                 <svg id="sunIcon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -671,29 +671,12 @@
     <!-- Main Hero -->
     <section class="hero">
         <div>
-            <svg class="app-logo-svg" width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="box-shadow: var(--shadow-lg); border-radius: 20px; margin-bottom: 24px;">
-                <defs>
-                    <linearGradient id="subtrackLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#7fffb2" />
-                        <stop offset="100%" stop-color="#8b5cf6" />
-                    </linearGradient>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                <rect width="100" height="100" rx="24" fill="#111827" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
-                <circle cx="50" cy="50" r="30" stroke="url(#subtrackLogoGrad)" stroke-width="8" stroke-dasharray="140 40" filter="url(#glow)"/>
-                <path d="M68 38L78 48L68 58" stroke="url(#subtrackLogoGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h1 class="hero-title">SubTrack</h1>
-            <div class="hero-tagline">Subscription Tracker & Manager</div>
-            <p class="hero-desc">Take control of your subscription expenses with SubTrack. Track, manage, and analyze your recurring bills locally on your device with complete privacy and stunning visual dashboards.</p>
+            <div class="app-icon">{{APP_ICON}}</div>
+            <h1 class="hero-title">{{APP_NAME}}</h1>
+            <div class="hero-tagline">{{APP_TAGLINE}}</div>
+            <p class="hero-desc">{{APP_DESCRIPTION}}</p>
             <div class="badge-container">
-                <a href="https://play.google.com/store/apps/details?id=app.novushq.finance.subscriptions.subtrack" class="play-badge" target="_blank" rel="noopener noreferrer">
+                <a href="{{PLAY_STORE_URL}}" class="play-badge" target="_blank" rel="noopener noreferrer">
                     <!-- Google Play Icon -->
                     <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.25 2.25c-.2 0-.37.07-.53.22L13.88 12 4.72 21.53c.16.15.33.22.53.22.25 0 .5-.08.75-.25l13.5-7.75c.67-.38 1-.96 1-1.75s-.33-1.37-1-1.75l-13.5-7.75c-.25-.17-.5-.25-.75-.25zM3.75 3.3v17.4c0 .35.15.65.45.85L12.56 12 4.2 3.85c-.3.2-.45.5-.45.85z"/>
@@ -707,33 +690,22 @@
         </div>
         <div class="mockup-container">
             <div class="mockup-wrapper">
-                <img src="../../../assets/images/subtrack_mockup.png" alt="SubTrack mobile dashboard mockup" class="mockup-image">
+                <img src="{{APP_MOCKUP_IMAGE_URL}}" alt="{{APP_NAME}} mobile dashboard mockup" class="mockup-image">
             </div>
         </div>
     </section>
 
     <!-- Detailed Description Section -->
     <section class="detailed-desc-section">
-        <h2 class="section-title">About SubTrack</h2>
+        <h2 class="section-title">About {{APP_NAME}}</h2>
         <div class="detailed-desc-content">
-            <p><strong>SubTrack</strong> is designed to take the friction out of subscription management. With the rise of software as a service (SaaS), streaming subscriptions, and recurring utility bills, it is easy to lose track of where your hard-earned money goes. SubTrack gives you a comprehensive dashboard that gathers all your subscription commitments in one safe, local database on your Android device.</p>
-            
-            <h3>Key Highlights & Philosophy</h3>
-            <p>We built SubTrack with a clean, minimalist design and local-first data processing. We believe your financial logs should remain private to you. There are no remote tracking servers, no automated cloud scraping of your bank accounts, and no data selling. Your logs belong entirely inside your phone's sandbox.</p>
-            
-            <h3>Core Capabilities</h3>
-            <ul>
-                <li><strong>Local Storage Sandbox:</strong> All inputted cost details, cycles, renewal dates, and notes are cached locally on device storage.</li>
-                <li><strong>Dynamic Analytics & Cost Projections:</strong> View summaries of your active spending categorized by month, week, or year. Instant indicators will tell you how much your total recurring footprint grows.</li>
-                <li><strong>Smart Push Notifications:</strong> Configure alert times to get notified 1, 2, or 5 days before a trial expires or a bill renews, avoiding accidental renewals.</li>
-                <li><strong>Custom Currencies & Categories:</strong> Supports multiple currency metrics and custom labels to sort your services (e.g. Work, Entertainment, Utilities).</li>
-            </ul>
+            {{APP_DETAILED_DESCRIPTION}}
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features-section">
-        <h2 class="section-title">Why use SubTrack?</h2>
+        <h2 class="section-title">Why use {{APP_NAME}}?</h2>
         <div class="features-grid">
             <!-- Feature 1 -->
             <div class="feature-card">
@@ -742,8 +714,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                 </div>
-                <h3>100% Offline & Private</h3>
-                <p>All subscription data stays locally on your device. We do not run tracking servers or gather analytics on your finances.</p>
+                <h3>{{FEATURE_1_TITLE}}</h3>
+                <p>{{FEATURE_1_DESC}}</p>
             </div>
             <!-- Feature 2 -->
             <div class="feature-card">
@@ -752,8 +724,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
                     </svg>
                 </div>
-                <h3>Sleek Visual Reports</h3>
-                <p>Understand where your money goes with elegant category breakdowns, usage insights, and interactive monthly analytics.</p>
+                <h3>{{FEATURE_2_TITLE}}</h3>
+                <p>{{FEATURE_2_DESC}}</p>
             </div>
             <!-- Feature 3 -->
             <div class="feature-card">
@@ -762,8 +734,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3>Smart Reminders</h3>
-                <p>Never get caught off guard. Get timely local push notifications before your trials expire or subscription renews.</p>
+                <h3>{{FEATURE_3_TITLE}}</h3>
+                <p>{{FEATURE_3_DESC}}</p>
             </div>
         </div>
     </section>
@@ -773,13 +745,13 @@
         <h2 class="section-title">App Screenshots</h2>
         <div class="screenshots-container">
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/subtrack_mockup.png" alt="SubTrack Dashboard Screenshot" class="screenshot-img">
+                <img src="{{SCREENSHOT_1_URL}}" alt="{{APP_NAME}} Screenshot 1" class="screenshot-img">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/subtrack_analytics.png" alt="SubTrack Analytics Screenshot" class="screenshot-img">
+                <img src="{{SCREENSHOT_2_URL}}" alt="{{APP_NAME}} Screenshot 2" class="screenshot-img">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/subtrack_calendar.png" alt="SubTrack Calendar Screenshot" class="screenshot-img">
+                <img src="{{SCREENSHOT_3_URL}}" alt="{{APP_NAME}} Screenshot 3" class="screenshot-img">
             </div>
         </div>
     </section>
@@ -796,15 +768,15 @@
                 <table class="info-table">
                     <tr>
                         <td>Category</td>
-                        <td>Finance</td>
+                        <td>{{APP_CATEGORY}}</td>
                     </tr>
                     <tr>
                         <td>Current Version</td>
-                        <td>1.0.0</td>
+                        <td>{{APP_VERSION}}</td>
                     </tr>
                     <tr>
                         <td>Size</td>
-                        <td>4.8 MB</td>
+                        <td>{{APP_SIZE}}</td>
                     </tr>
                     <tr>
                         <td>Requires</td>
@@ -812,21 +784,21 @@
                     </tr>
                     <tr>
                         <td>Package ID</td>
-                        <td style="font-family: var(--font-mono); font-size: 0.8rem;">app.novushq.finance.subscriptions.subtrack</td>
+                        <td style="font-family: var(--font-mono); font-size: 0.8rem;">{{APP_PACKAGE_ID}}</td>
                     </tr>
                 </table>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Reviews Section (Conditional: Render only if there are reviews) -->
     <section class="reviews-section" id="reviewsSection">
         <h2 class="section-title">User Reviews</h2>
         <div class="reviews-grid">
             <!-- Review 1 -->
             <div class="review-card">
                 <div class="review-header">
-                    <span class="reviewer-name">Alex Mercer</span>
+                    <span class="reviewer-name">{{REVIEW_1_AUTHOR}}</span>
                     <div class="stars">
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -835,12 +807,12 @@
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                     </div>
                 </div>
-                <p class="review-text">"Absolutely brilliant application. The UI design is incredibly clean and it doesn't try to sync my private bank data to online servers. Best subscription manager out there."</p>
+                <p class="review-text">"{{REVIEW_1_TEXT}}"</p>
             </div>
             <!-- Review 2 -->
             <div class="review-card">
                 <div class="review-header">
-                    <span class="reviewer-name">Sarah Jenkins</span>
+                    <span class="reviewer-name">{{REVIEW_2_AUTHOR}}</span>
                     <div class="stars">
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -849,17 +821,17 @@
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                     </div>
                 </div>
-                <p class="review-text">"Simple, visual, and highly functional. The widget support helps me track my monthly subscription bills at a quick glance directly from my home screen."</p>
+                <p class="review-text">"{{REVIEW_2_TEXT}}"</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 NovusHQ. All rights reserved.</p>
+        <p>&copy; {{CURRENT_YEAR}} {{DEVELOPER_NAME}}. All rights reserved.</p>
         <div class="footer-links">
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="mailto:support@novushq.app">Support Contact</a>
+            <a href="mailto:{{CONTACT_EMAIL}}">Support Contact</a>
         </div>
     </footer>
 </div>
