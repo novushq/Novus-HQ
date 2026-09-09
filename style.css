@@ -9,6 +9,7 @@
   --text: #e8eaf0;
   --muted: #6b7280;
   --accent: #7fffb2;
+  --accent-2: #78d8ff;
   --accent-dim: rgba(127,255,178,0.12);
   --accent-glow: rgba(127,255,178,0.25);
   --font-head: 'Syne', sans-serif;
@@ -148,6 +149,7 @@ body::after {
   margin-bottom: 32px;
   animation: fade-up 0.6s 0.2s ease both;
 }
+.tag-divider { color: var(--muted); margin: 0 3px; }
 .dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--accent);
@@ -324,6 +326,7 @@ body::after {
   background: var(--surface);
   transition: transform 0.3s, border-color 0.3s;
   cursor: pointer;
+  position: relative;
 }
 .work-card:hover {
   transform: translateY(-4px);
@@ -340,6 +343,34 @@ body::after {
   display: flex; flex-direction: column; justify-content: flex-end;
 }
 .work-card--large .work-card-inner { min-height: 320px; }
+
+.work-card-copy { position: relative; z-index: 2; max-width: 560px; }
+.work-app-icon {
+  width: 44px; height: 44px; object-fit: cover;
+  border-radius: 13px; display: block; margin-bottom: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+}
+.work-app-icon--subtrack {
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #7fffb2, #8b5cf6);
+  color: #080a0f; font-size: 20px; font-weight: 800;
+}
+.work-card-preview {
+  position: absolute; z-index: 1;
+  width: 210px; height: auto; right: 9%; bottom: -28px;
+  border: 5px solid rgba(255,255,255,0.1); border-bottom: 0;
+  border-radius: 24px 24px 0 0; opacity: 0.82;
+  transform: rotate(5deg); transform-origin: bottom center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+.work-card--codeforcesly:hover .work-card-preview {
+  transform: rotate(2deg) translateY(-8px); opacity: 1;
+}
+.work-card--codeforcesly .work-card-bg {
+  background: radial-gradient(ellipse at 90% 20%, rgba(58, 208, 224, .38), transparent 58%), radial-gradient(ellipse at 35% 90%, rgba(127,255,178,.14), transparent 60%);
+}
+.work-card--pipeline { cursor: default; }
 
 .work-card-bg {
   position: absolute; inset: 0;
@@ -395,6 +426,7 @@ body::after {
   padding: 80px;
   text-align: center;
   position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(14,17,24,.92), rgba(20,31,35,.9));
 }
 .contact-inner::before {
   content: '';
@@ -478,4 +510,15 @@ body::after {
   .work-card--large { grid-column: auto; }
   .contact-inner { padding: 48px 24px; }
   .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .work-card-preview { width: 120px; right: 3%; bottom: -12px; opacity: .4; }
+  .work-card--codeforcesly .work-card-copy { max-width: 78%; }
+}
+
+@media (pointer: coarse) {
+  body, a, button { cursor: auto !important; }
+  body::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
