@@ -1,0 +1,416 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pagewise Privacy Policy</title><meta name="description" content="How Pagewise handles local reminders, Android backup and optional JSON exports."><style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #4f46e5;
+            --accent-hover: #4338ca;
+            --accent-light: #e0e7ff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+            --card-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-light: #1e1b4b;
+            --border: #1f2937;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: var(--transition);
+        }
+
+        /* Layout */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 968px) {
+            .app-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 24px 16px;
+            }
+        }
+
+        /* Navigation Header */
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .brand-name h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .brand-name p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        @media (max-width: 968px) {
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        .toc-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .toc-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-link {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--accent);
+            background-color: var(--bg-primary);
+            border-left-color: var(--accent);
+            padding-left: 16px;
+        }
+
+        /* Content Area */
+        .content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 24px 16px;
+            }
+        }
+
+        .title-section {
+            margin-bottom: 32px;
+        }
+
+        .title-section h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Highlights / Short Summary card */
+        .summary-card {
+            background: linear-gradient(135deg, var(--accent-light), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent);
+        }
+
+        .summary-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-text {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        /* Typography inside Content */
+        .doc-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 40px;
+        }
+
+        .doc-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .doc-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--text-primary);
+        }
+
+        .doc-section p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        .doc-section ul, .doc-section ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        .doc-section li {
+            margin-bottom: 8px;
+        }
+
+        .doc-section a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted var(--accent);
+            transition: var(--transition);
+        }
+
+        .doc-section a:hover {
+            color: var(--accent-hover);
+            border-bottom-style: solid;
+        }
+
+        /* Modern Tables */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-weight: 600;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Contact Details Card */
+        .contact-box {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-box strong {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .highlight-var {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: 600;
+        }
+        [data-theme="dark"] .highlight-var {
+            background-color: #854d0e;
+            color: #fef08a;
+        }
+    
+main{max-width:850px;margin:40px auto;padding:24px}h1,h2{margin:1.4em 0 .5em}p{margin:0 0 1em}a{color:#a43f32}</style></head><body data-theme="light"><main><a href="index.html">← Pagewise</a><h1>Pagewise Privacy Policy</h1><p>Developed by Novus HQ · Package: app.novushhq.pagewise</p><p>Effective and updated: October 21, 2026</p>
+<h2>Summary</h2><p>Pagewise is an offline PDF reader, editor and scanner. It does not collect, transmit, sell or share your personal data or documents with Novus HQ or anyone else. The app has no account, no advertising, no analytics or crash-reporting SDK, and no INTERNET permission, so it cannot send data over the network.</p>
+<h2>Documents and images you open</h2><p>You choose every file Pagewise works with through Android’s document picker, photo picker, “Open with”/“Share” from another app, or the system camera app. Pagewise reads only the items you select. To process a file it may make a temporary working copy in the app’s private cache; you can remove these copies at any time with Settings → Clear temporary files, and Android may also clear the cache.</p>
+<h2>Files Pagewise creates</h2><p>Results such as merged, split, compressed, watermarked, locked or converted PDFs, exported images and text files are saved on your device in Documents/Pagewise (on Android 10 and older, in Pagewise’s own app folder). They are not uploaded anywhere. You can open, share or delete them in the Files tab or with any file manager. Files in Documents/Pagewise remain on your device if you uninstall the app.</p>
+<h2>Camera</h2><p>The scanner asks Android’s camera app to take a photo and hand it back to Pagewise. Pagewise does not hold the camera permission and cannot use the camera in the background. Photos are used only to build the PDF you save.</p>
+<h2>Passwords</h2><p>Passwords you enter to lock, unlock or read a protected PDF are used only on your device for that operation. They are not stored or transmitted. Pagewise cannot recover a forgotten password.</p>
+<h2>Stored on your device</h2><p>Pagewise keeps your settings (theme, default compression and similar preferences) and a list of files you imported or favorited, including their names and access links, in its private app storage. This list never leaves your device.</p>
+<h2>Sharing</h2><p>When you tap Share or “Open with another app”, Android hands the file to the app you choose. That app’s privacy policy then applies to the copy it receives.</p>
+<h2>Android device backup</h2><p>If Android backup is enabled, Android may include Pagewise’s settings and file list in your own device backup under your Google and device settings. Novus HQ cannot access that backup.</p>
+<h2>Deletion</h2><p>Remove items from the Files list, delete saved files, clear temporary files in Settings, or clear app storage / uninstall Pagewise to remove its private data. We have no server copy to retrieve or erase.</p>
+<h2>Children</h2><p>Pagewise is a general productivity tool and does not knowingly collect personal information from anyone, including children.</p>
+<h2>Security</h2><p>Android’s app sandbox protects Pagewise’s private storage. Locked PDFs use AES-256 encryption. Files you save to shared storage can be read by you and by apps you grant access to, so keep sensitive documents protected.</p>
+<h2>Contact and changes</h2><p>If you email support, we receive only what you choose to send and use it to reply. Please don’t attach sensitive documents unless necessary. Changes to this policy will be published on this page with a new date.</p><p>Novus HQ · <a href="mailto:support@novushq.app">support@novushq.app</a> · <a href="https://novushq.app/">novushq.app</a></p></main></body></html>
