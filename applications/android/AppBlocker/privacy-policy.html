@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — FocusGuard App Blocker</title>
+    
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #4f46e5;
+            --accent-hover: #4338ca;
+            --accent-light: #e0e7ff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+            --card-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-light: #1e1b4b;
+            --border: #1f2937;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: var(--transition);
+        }
+
+        /* Layout */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 968px) {
+            .app-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 24px 16px;
+            }
+        }
+
+        /* Navigation Header */
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .brand-name h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .brand-name p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        @media (max-width: 968px) {
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        .toc-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .toc-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toc-link {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--accent);
+            background-color: var(--bg-primary);
+            border-left-color: var(--accent);
+            padding-left: 16px;
+        }
+
+        /* Content Area */
+        .content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 24px 16px;
+            }
+        }
+
+        .title-section {
+            margin-bottom: 32px;
+        }
+
+        .title-section h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Highlights / Short Summary card */
+        .summary-card {
+            background: linear-gradient(135deg, var(--accent-light), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent);
+        }
+
+        .summary-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-text {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        /* Typography inside Content */
+        .doc-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 40px;
+        }
+
+        .doc-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .doc-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--text-primary);
+        }
+
+        .doc-section p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        .doc-section ul, .doc-section ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        .doc-section li {
+            margin-bottom: 8px;
+        }
+
+        .doc-section a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted var(--accent);
+            transition: var(--transition);
+        }
+
+        .doc-section a:hover {
+            color: var(--accent-hover);
+            border-bottom-style: solid;
+        }
+
+        /* Modern Tables */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-weight: 600;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Contact Details Card */
+        .contact-box {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-box strong {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+<div class="app-container">
+    
+    <!-- Top Brand Header -->
+    <header>
+        <a href="https://www.novushq.app" class="brand">
+            <div class="brand-logo">N</div>
+            <div class="brand-name">
+                <h1>NovusHQ</h1>
+                <p>Applications Privacy Center</p>
+            </div>
+        </a>
+        <div class="controls">
+            <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode">
+                <!-- Sun Icon -->
+                <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+                <!-- Moon Icon -->
+                <svg id="moonIcon" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 12.83A9.53 9.53 0 0 1 12 21.75c-5.285 0-9.75-4.265-9.75-9.75a9.53 9.53 0 0 1 8.92-9.749 8.25 8.25 0 0 0 10.58 10.58h-.001Z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar TOC -->
+    <aside class="sidebar">
+        <div class="toc-card">
+            <div class="toc-title">ON THIS PAGE</div>
+            <ul class="toc-list">
+                <li><a href="#about" class="toc-link">1. What FocusGuard Is</a></li>
+                <li><a href="#collection" class="toc-link">2. Information We Collect</a></li>
+                <li><a href="#usage" class="toc-link">3. How Your Data Is Used</a></li>
+                <li><a href="#thirdparty" class="toc-link">4. Third-Party Services</a></li>
+                <li><a href="#ads" class="toc-link">5. Advertising</a></li>
+                <li><a href="#payments" class="toc-link">6. Payments</a></li>
+                <li><a href="#sharing" class="toc-link">7. Data Sharing</a></li>
+                <li><a href="#rights" class="toc-link">8. Your Rights</a></li>
+                <li><a href="#children" class="toc-link">9. Children's Privacy</a></li>
+                <li><a href="#security" class="toc-link">10. Security & Retention</a></li>
+                <li><a href="#contact" class="toc-link">11. Contact Info</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        <div class="title-section">
+            <h2>Privacy Policy</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 500;">FocusGuard — App Blocker by NovusHQ</p>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    Effective: October 24, 2026
+                </div>
+                <div class="meta-item">
+                    <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V5"/></svg>
+                    Updated: October 24, 2026
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-title">
+                <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                In Short (TL;DR)
+            </div>
+            <div class="summary-text">
+                FocusGuard works fully offline. Your block rules, schedules, keyword lists, settings and usage statistics stay in the App's private storage on your phone. We operate no servers, embed no analytics, advertising or crash-reporting SDKs, and hold no account system — so there is nothing for us to receive, store or share. No data of any kind leaves your device because of this App.
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <section id="about" class="doc-section">
+            <h3>1. What FocusGuard Is</h3>
+            <p>FocusGuard (listing name <em>FocusGuard: Block Reels &amp; Apps</em>, package <code>app.novushq.appblocker</code>) is an Android app blocker. It blocks distracting apps and websites on schedules you define, closes Instagram Reels, YouTube Shorts, TikTok and other short-form feeds the moment they open, runs focus timers and daily app limits, and shows on-device screen-time statistics and weekly reports.</p>
+            <p>FocusGuard is developed and operated by <strong>NovusHQ</strong>. Contact: <a href="mailto:support@novushq.app">support@novushq.app</a>.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="collection" class="doc-section">
+            <h3>2. Information We Collect</h3>
+            
+            <h4>2.1 Data You Create (Stored on Your Device Only)</h4>
+            <p>Everything the App knows about you is created by you, on your phone, and stays there. This includes:</p>
+            <ul>
+                <li>Block rules: chosen apps and websites, schedules, days and start/end times.</li>
+                <li>Focus sessions, daily time limits, open limits, strict-mode state and pause delays.</li>
+                <li>Blocked keywords, adult-content filter setting and theme choice.</li>
+                <li>On-device usage statistics the App reads from Android (per-app screen time, session counts, hourly buckets) and the weekly reports it derives from them.</li>
+            </ul>
+            <p>This data lives in the App's private local storage (Room database, DataStore and SharedPreferences) inside Android's app sandbox. The App declares no network permission, operates no servers and runs no account system, so this data cannot leave your device through the App.</p>
+
+            <h4>2.2 Data We Collect Automatically: None</h4>
+            <p>FocusGuard contains <strong>no analytics SDKs, no advertising SDKs, no crash-reporting SDKs and no account or login code</strong>. Nothing is logged, measured or transmitted automatically — no device identifiers, no location, no diagnostics, no usage telemetry.</p>
+            <p>The only email address involved is <a href="mailto:support@novushq.app">support@novushq.app</a>, and only if <em>you</em> choose to write to us. Support emails are used solely to answer you.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data Category</th>
+                            <th>Collected?</th>
+                            <th>Where It Lives</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Block rules, schedules, keywords, settings</td>
+                            <td>No — created by you, on-device</td>
+                            <td>App private storage only</td>
+                        </tr>
+                        <tr>
+                            <td>Screen-time and session statistics</td>
+                            <td>No — read on-device via Android APIs</td>
+                            <td>App private storage only</td>
+                        </tr>
+                        <tr>
+                            <td>Accessibility events (which app/site is on screen)</td>
+                            <td>Processed in memory only, never stored or sent</td>
+                            <td>Nowhere — discarded after the block decision</td>
+                        </tr>
+                        <tr>
+                            <td>Identifiers, location, contacts, photos, messages</td>
+                            <td>Never accessed</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics / ads / crash data</td>
+                            <td>None — no such SDKs are embedded</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.3 Android Permissions — What They Do and Do Not Do</h4>
+            <ul>
+                <li><strong>Accessibility service (required for blocking).</strong> The service observes which app or web page is in the foreground and whether a Reels/Shorts player is visible, so it can enforce <em>your</em> rules. It does not read message content, typing, passwords or page content beyond the address/domain being checked, and everything it sees stays in the phone's memory — it is never written to storage or transmitted.</li>
+                <li><strong>Usage access (optional).</strong> Used only to compute the on-device statistics shown in Usage and Reports and to enforce daily time limits.</li>
+                <li><strong>Notifications (optional, Android 13+).</strong> Used only to show the focus-session countdown.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="usage" class="doc-section">
+            <h3>3. How Your Data Is Used</h3>
+            <p>All processing happens on your device, to:</p>
+            <ul>
+                <li>Enforce your block rules at the scheduled times (apps, websites, keywords, adult-content filter, Reels/Shorts detection).</li>
+                <li>Run focus sessions, daily time limits, open limits and strict mode.</li>
+                <li>Compute the Usage dashboard, per-app drill-downs and weekly Reports from Android usage statistics.</li>
+                <li>Show the focus-session countdown notification, if you enabled notifications.</li>
+            </ul>
+            <p>No other use exists: there is no advertising profile, no analytics pipeline and no server-side processing of any kind.</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="thirdparty" class="doc-section">
+            <h3>4. Third-Party Services</h3>
+            <p>None. FocusGuard embeds no third-party SDKs — no advertising, analytics, crash-reporting, attribution or payment SDKs. There are no third-party privacy policies to list because no third party receives anything from the App.</p>
+            <p>When you install or update the App through Google Play, Google's own store processes apply (account, download delivery); those are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a> and are outside this App's control.</p>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="ads" class="doc-section">
+            <h3>5. Advertising</h3>
+            <p>FocusGuard shows <strong>no ads</strong> and contains no advertising SDK. There is no ad personalisation, no Advertising ID use and nothing to opt out of.</p>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="payments" class="doc-section">
+            <h3>6. Payments</h3>
+            <p>FocusGuard currently processes <strong>no payments</strong>: there are no in-app purchases or subscriptions in this version, and we never see or store payment details. If a Pro upgrade via Google Play billing is introduced later, this policy will be updated before it ships, and payments will be processed solely by Google Play.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="sharing" class="doc-section">
+            <h3>7. Data Sharing</h3>
+            <p>We <strong>do not sell, trade, rent or otherwise share</strong> any data — there is no data to share, because nothing leaves your device through the App. The sole exception is an email you send us yourself at <a href="mailto:support@novushq.app">support@novushq.app</a>. We may preserve or disclose information if required by law.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="rights" class="doc-section">
+            <h3>8. Your Rights</h3>
+            <p>Because all of your data stays on your device, you are always in control: view or change your rules and settings in the App at any time, clear the App's storage (Android Settings &gt; Apps &gt; FocusGuard &gt; Storage &gt; Clear data) to erase everything, or uninstall the App — uninstalling removes all local data.</p>
+
+            <h4>8A. GDPR Rights (EEA / UK / Switzerland)</h4>
+            <p>If you are in the European Economic Area, UK, or Switzerland, you have rights of access, rectification, erasure, restriction, portability and objection. Since we hold no data about you on any server, most requests are answered by the fact that there is nothing to provide — but write to <a href="mailto:support@novushq.app">support@novushq.app</a> with any question and we respond within 30 days.</p>
+
+            <h4>8B. CCPA / CPRA Rights (California)</h4>
+            <p>If you are a California resident, you have the right to know, delete and correct personal information and to opt out of sales. We do <strong>not</strong> sell personal information — we collect none. To exercise your rights, email <a href="mailto:support@novushq.app">support@novushq.app</a>. We respond within 45 days.</p>
+
+            <h4>8C. Other Regions</h4>
+            <p>We comply with applicable privacy laws in all regions where FocusGuard is available, including Brazil (LGPD), India (DPDP), Canada (PIPEDA), Australia, South Korea, and Japan. Contact us to exercise your rights.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="children" class="doc-section">
+            <h3>9. Children's Privacy</h3>
+            <p>FocusGuard is not directed at children under the age of 13, and we do not knowingly collect personal data from children — indeed, we collect no personal data from anyone. If you believe a child has sent us an email with personal data, contact us and we will delete it immediately.</p>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="security" class="doc-section">
+            <h3>10. Security & Retention</h3>
+
+            <h4>10.1 Data Security</h4>
+            <p>There is no transmission to secure: the App sends nothing anywhere. On your phone, your data is protected by Android's application sandbox — other apps cannot read it — and your rules and statistics are only ever processed in memory or in the App's private storage.</p>
+
+            <h4>10.2 Data Retention</h4>
+            <ul>
+                <li><strong>Your rules, settings and statistics</strong> — retained on your device until you clear the App's data or uninstall the App.</li>
+                <li><strong>Accessibility observations</strong> — never retained; discarded immediately after each block decision.</li>
+                <li><strong>Support emails you send us</strong> — kept only as long as needed to resolve your request.</li>
+            </ul>
+        </section>
+
+        <!-- Section 11 -->
+        <section id="contact" class="doc-section">
+            <h3>11. Contact Info</h3>
+            <p>If you have any questions or feedback regarding this Privacy Policy, please get in touch with us:</p>
+            
+            <div class="contact-box">
+                <strong>NovusHQ</strong>
+                <p>Email: <a href="mailto:support@novushq.app">support@novushq.app</a></p>
+                <p>Website: <a href="https://www.novushq.app" target="_blank" rel="noopener noreferrer">www.novushq.app</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NovusHQ. All rights reserved.</p>
+        <p style="font-size: 0.75rem; opacity: 0.8;">FocusGuard — App Blocker &mdash; package: app.novushq.appblocker</p>
+    </footer>
+</div>
+
+<script>
+    // Theme switcher logic
+    const body = document.body;
+    const themeBtn = document.getElementById('themeBtn');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+
+    function setTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+
+    // Scroll active link styling
+    const sections = document.querySelectorAll('.doc-section');
+    const navLinks = document.querySelectorAll('.toc-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 120)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
