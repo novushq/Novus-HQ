@@ -456,11 +456,11 @@
             <div class="meta-info">
                 <div class="meta-item">
                     <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    Effective: October 24, 2026
+                    Effective: October 25, 2026
                 </div>
                 <div class="meta-item">
                     <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V5"/></svg>
-                    Updated: October 24, 2026
+                    Updated: October 25, 2026
                 </div>
             </div>
         </div>
@@ -471,7 +471,7 @@
                 In Short (TL;DR)
             </div>
             <div class="summary-text">
-                FocusGuard works fully offline. Your block rules, schedules, keyword lists, settings and usage statistics stay in the App's private storage on your phone. We operate no servers, embed no analytics, advertising or crash-reporting SDKs, and hold no account system — so there is nothing for us to receive, store or share. No data of any kind leaves your device because of this App.
+                FocusGuard is free and supported by ads from Google AdMob. Your block rules, schedules, keyword lists, settings and usage statistics stay in the App's private storage on your phone — they are never sent to us, to Google or to advertisers. We operate no servers and no account system. The only data that leaves your device is what Google's ads SDK needs to show an ad (device and ad identifiers, IP address, approximate location derived from it, and ad interaction data), governed by your consent choices and Google's privacy policy. Blocking works offline; ads need the internet.
             </div>
         </div>
 
@@ -494,10 +494,17 @@
                 <li>Blocked keywords, adult-content filter setting and theme choice.</li>
                 <li>On-device usage statistics the App reads from Android (per-app screen time, session counts, hourly buckets) and the weekly reports it derives from them.</li>
             </ul>
-            <p>This data lives in the App's private local storage (Room database, DataStore and SharedPreferences) inside Android's app sandbox. The App declares no network permission, operates no servers and runs no account system, so this data cannot leave your device through the App.</p>
+            <p>This data lives in the App's private local storage (Room database, DataStore and SharedPreferences) inside Android's app sandbox. We operate no servers and run no account system, and the App never sends this data anywhere — including to the ads SDK.</p>
 
-            <h4>2.2 Data We Collect Automatically: None</h4>
-            <p>FocusGuard contains <strong>no analytics SDKs, no advertising SDKs, no crash-reporting SDKs and no account or login code</strong>. Nothing is logged, measured or transmitted automatically — no device identifiers, no location, no diagnostics, no usage telemetry.</p>
+            <h4>2.2 Data Collected Automatically: Advertising Only</h4>
+            <p>FocusGuard contains <strong>no analytics SDKs, no crash-reporting SDKs and no account or login code</strong>. It does contain one third-party SDK: <strong>Google Mobile Ads (AdMob)</strong> together with Google's User Messaging Platform (UMP) for consent. To serve, measure and protect ads, Google may collect:</p>
+            <ul>
+                <li>Device identifiers, including the Android Advertising ID and app set ID.</li>
+                <li>IP address and the approximate (coarse) location derived from it.</li>
+                <li>Ad interactions (impressions, clicks, video completions) and app diagnostics such as crash data from the ads SDK.</li>
+                <li>Device information (model, OS version, language, network type).</li>
+            </ul>
+            <p>NovusHQ does not receive this data in an identifiable form; we only see aggregate earnings reports in AdMob. The App never passes your block rules, the apps you block, your screen-time statistics or anything the accessibility service observes to the ads SDK.</p>
             <p>The only email address involved is <a href="mailto:support@novushq.app">support@novushq.app</a>, and only if <em>you</em> choose to write to us. Support emails are used solely to answer you.</p>
 
             <div class="table-container">
@@ -531,7 +538,12 @@
                             <td>—</td>
                         </tr>
                         <tr>
-                            <td>Analytics / ads / crash data</td>
+                            <td>Advertising ID, IP address, coarse location, ad interactions</td>
+                            <td>Yes — by Google AdMob, to serve and measure ads</td>
+                            <td>Google, under its privacy policy and your consent choices</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics / crash reporting by NovusHQ</td>
                             <td>None — no such SDKs are embedded</td>
                             <td>—</td>
                         </tr>
@@ -544,6 +556,8 @@
                 <li><strong>Accessibility service (required for blocking).</strong> The service observes which app or web page is in the foreground and whether a Reels/Shorts player is visible, so it can enforce <em>your</em> rules. It does not read message content, typing, passwords or page content beyond the address/domain being checked, and everything it sees stays in the phone's memory — it is never written to storage or transmitted.</li>
                 <li><strong>Usage access (optional).</strong> Used only to compute the on-device statistics shown in Usage and Reports and to enforce daily time limits.</li>
                 <li><strong>Notifications (optional, Android 13+).</strong> Used only to show the focus-session countdown.</li>
+                <li><strong>Internet and network state.</strong> Used only by the ads SDK to load ads and consent messages. Blocking, schedules, limits and statistics work fully offline.</li>
+                <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>, added by the ads SDK). Used by Google for ad delivery and measurement. You can reset or delete it in Android Settings &gt; Privacy &gt; Ads.</li>
             </ul>
         </section>
 
@@ -557,20 +571,25 @@
                 <li>Compute the Usage dashboard, per-app drill-downs and weekly Reports from Android usage statistics.</li>
                 <li>Show the focus-session countdown notification, if you enabled notifications.</li>
             </ul>
-            <p>No other use exists: there is no advertising profile, no analytics pipeline and no server-side processing of any kind.</p>
+            <p>Separately, the ads SDK uses the data listed in 2.2 to show ads in the App (a banner, an occasional full-screen ad between tasks, and an optional video you can watch to go ad-free for an hour). NovusHQ runs no analytics pipeline and no server-side processing of any kind.</p>
         </section>
 
         <!-- Section 4 -->
         <section id="thirdparty" class="doc-section">
             <h3>4. Third-Party Services</h3>
-            <p>None. FocusGuard embeds no third-party SDKs — no advertising, analytics, crash-reporting, attribution or payment SDKs. There are no third-party privacy policies to list because no third party receives anything from the App.</p>
+            <p>FocusGuard embeds exactly one third-party service:</p>
+            <ul>
+                <li><strong>Google AdMob and User Messaging Platform</strong> — ads and consent. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> · <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from apps that use its services</a>.</li>
+            </ul>
+            <p>There are no analytics, crash-reporting, attribution or payment SDKs.</p>
             <p>When you install or update the App through Google Play, Google's own store processes apply (account, download delivery); those are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a> and are outside this App's control.</p>
         </section>
 
         <!-- Section 5 -->
         <section id="ads" class="doc-section">
             <h3>5. Advertising</h3>
-            <p>FocusGuard shows <strong>no ads</strong> and contains no advertising SDK. There is no ad personalisation, no Advertising ID use and nothing to opt out of.</p>
+            <p>FocusGuard is free for everyone and paid for by ads. We keep them out of the way: one banner at the bottom of the screen (never during onboarding or permission setup), an occasional full-screen ad only when you finish a task and return to a tab (at most once every few minutes, never on launch), and an optional video you choose to watch in Settings to hide all ads for an hour. The blocking screens the App shows over other apps never contain ads. Ad content is limited to teen-appropriate categories.</p>
+            <p><strong>Consent.</strong> In the EEA, UK and Switzerland, and in US states that require it, Google's consent message appears when you first open the App. Declining is respected: ads become non-personalised (limited ads) and the App keeps working fully. You can change your choice at any time in Settings &gt; Ads &gt; Ad privacy choices. Everywhere, you can opt out of personalised ads by deleting or resetting your Advertising ID in Android Settings &gt; Privacy &gt; Ads.</p>
         </section>
 
         <!-- Section 6 -->
@@ -582,7 +601,7 @@
         <!-- Section 7 -->
         <section id="sharing" class="doc-section">
             <h3>7. Data Sharing</h3>
-            <p>We <strong>do not sell, trade, rent or otherwise share</strong> any data — there is no data to share, because nothing leaves your device through the App. The sole exception is an email you send us yourself at <a href="mailto:support@novushq.app">support@novushq.app</a>. We may preserve or disclose information if required by law.</p>
+            <p>We <strong>do not sell, trade or rent</strong> any data, and we hold none about you on any server. Your rules and statistics never leave your device. The ads SDK shares the data described in section 2.2 with Google and, where you have consented, Google's ad partners, to show and measure ads; under some US state laws this may count as "sharing" for cross-context advertising, which you can decline through the consent message or Ad privacy choices. Emails you send to <a href="mailto:support@novushq.app">support@novushq.app</a> are used only to answer you. We may preserve or disclose information if required by law.</p>
         </section>
 
         <!-- Section 8 -->
@@ -591,10 +610,10 @@
             <p>Because all of your data stays on your device, you are always in control: view or change your rules and settings in the App at any time, clear the App's storage (Android Settings &gt; Apps &gt; FocusGuard &gt; Storage &gt; Clear data) to erase everything, or uninstall the App — uninstalling removes all local data.</p>
 
             <h4>8A. GDPR Rights (EEA / UK / Switzerland)</h4>
-            <p>If you are in the European Economic Area, UK, or Switzerland, you have rights of access, rectification, erasure, restriction, portability and objection. Since we hold no data about you on any server, most requests are answered by the fact that there is nothing to provide — but write to <a href="mailto:support@novushq.app">support@novushq.app</a> with any question and we respond within 30 days.</p>
+            <p>If you are in the European Economic Area, UK, or Switzerland, you have rights of access, rectification, erasure, restriction, portability and objection. We hold no data about you on any server; for advertising data processed by Google, use Ad privacy choices in the App or Google's tools at <a href="https://myadcenter.google.com" target="_blank" rel="noopener noreferrer">myadcenter.google.com</a>. For anything else, write to <a href="mailto:support@novushq.app">support@novushq.app</a> with any question and we respond within 30 days.</p>
 
             <h4>8B. CCPA / CPRA Rights (California)</h4>
-            <p>If you are a California resident, you have the right to know, delete and correct personal information and to opt out of sales. We do <strong>not</strong> sell personal information — we collect none. To exercise your rights, email <a href="mailto:support@novushq.app">support@novushq.app</a>. We respond within 45 days.</p>
+            <p>If you are a California resident, you have the right to know, delete and correct personal information and to opt out of sales. We do <strong>not</strong> sell personal information. You can opt out of sharing for personalised ads via the consent message, Settings &gt; Ads &gt; Ad privacy choices, or by deleting your Advertising ID. To exercise other rights, email <a href="mailto:support@novushq.app">support@novushq.app</a>. We respond within 45 days.</p>
 
             <h4>8C. Other Regions</h4>
             <p>We comply with applicable privacy laws in all regions where FocusGuard is available, including Brazil (LGPD), India (DPDP), Canada (PIPEDA), Australia, South Korea, and Japan. Contact us to exercise your rights.</p>
@@ -603,7 +622,7 @@
         <!-- Section 9 -->
         <section id="children" class="doc-section">
             <h3>9. Children's Privacy</h3>
-            <p>FocusGuard is not directed at children under the age of 13, and we do not knowingly collect personal data from children — indeed, we collect no personal data from anyone. If you believe a child has sent us an email with personal data, contact us and we will delete it immediately.</p>
+            <p>FocusGuard is not directed at children under the age of 13, and we do not knowingly collect personal data from children. Ads are restricted to teen-appropriate content. If you believe a child has sent us an email with personal data, contact us and we will delete it immediately.</p>
         </section>
 
         <!-- Section 10 -->
@@ -611,12 +630,13 @@
             <h3>10. Security & Retention</h3>
 
             <h4>10.1 Data Security</h4>
-            <p>There is no transmission to secure: the App sends nothing anywhere. On your phone, your data is protected by Android's application sandbox — other apps cannot read it — and your rules and statistics are only ever processed in memory or in the App's private storage.</p>
+            <p>The App itself sends none of your rules or statistics anywhere; ad traffic is encrypted in transit by Google's SDK (HTTPS). On your phone, your data is protected by Android's application sandbox — other apps cannot read it — and your rules and statistics are only ever processed in memory or in the App's private storage.</p>
 
             <h4>10.2 Data Retention</h4>
             <ul>
                 <li><strong>Your rules, settings and statistics</strong> — retained on your device until you clear the App's data or uninstall the App.</li>
                 <li><strong>Accessibility observations</strong> — never retained; discarded immediately after each block decision.</li>
+                <li><strong>Advertising data</strong> — retained by Google according to its own retention policy; NovusHQ does not store it.</li>
                 <li><strong>Support emails you send us</strong> — kept only as long as needed to resolve your request.</li>
             </ul>
         </section>
