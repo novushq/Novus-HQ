@@ -300,3 +300,4 @@ a.app-card:hover, .app-card:has(.card-link:hover) { border-color: var(--border-s
   .app-card-top > div { flex: 1 1 calc(100% - 62px); }
   .app-card-top .pill { margin-left: 0; }
 }
+.badge-container .category { color: var(--subtle); font-size: 14px; }
