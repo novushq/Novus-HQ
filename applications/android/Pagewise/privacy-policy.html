@@ -1,407 +1,25 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pagewise Privacy Policy</title><meta name="description" content="How Pagewise handles local documents, Google AdMob advertising data, consent choices and Android backup."><style>
-        :root {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent: #4f46e5;
-            --accent-hover: #4338ca;
-            --accent-light: #e0e7ff;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-            --card-radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #0b0f19;
-            --bg-secondary: #111827;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
-            --accent-light: #1e1b4b;
-            --border: #1f2937;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            transition: var(--transition);
-        }
-
-        /* Layout */
-        .app-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 24px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 48px;
-        }
-
-        @media (max-width: 968px) {
-            .app-container {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                padding: 24px 16px;
-            }
-        }
-
-        /* Navigation Header */
-        header {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 20px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .brand-logo {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--accent), #8b5cf6);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 1.25rem;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-        }
-
-        .brand-name h1 {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .brand-name p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        /* Controls */
-        .controls {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .theme-toggle {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--accent);
-            transform: scale(1.05);
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Sidebar Navigation */
-        .sidebar {
-            position: sticky;
-            top: 40px;
-            height: fit-content;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        @media (max-width: 968px) {
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
-        }
-
-        .toc-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: 24px;
-            box-shadow: var(--shadow);
-        }
-
-        .toc-title {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .toc-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .toc-link {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-            display: block;
-            padding: 6px 12px;
-            border-radius: 8px;
-            border-left: 2px solid transparent;
-        }
-
-        .toc-link:hover, .toc-link.active {
-            color: var(--accent);
-            background-color: var(--bg-primary);
-            border-left-color: var(--accent);
-            padding-left: 16px;
-        }
-
-        /* Content Area */
-        .content {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: 48px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                padding: 24px 16px;
-            }
-        }
-
-        .title-section {
-            margin-bottom: 32px;
-        }
-
-        .title-section h2 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .meta-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            margin-top: 12px;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Highlights / Short Summary card */
-        .summary-card {
-            background: linear-gradient(135deg, var(--accent-light), rgba(139, 92, 246, 0.1));
-            border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .summary-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background-color: var(--accent);
-        }
-
-        .summary-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .summary-text {
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-
-        /* Typography inside Content */
-        .doc-section {
-            margin-bottom: 48px;
-            scroll-margin-top: 40px;
-        }
-
-        .doc-section h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
-        }
-
-        .doc-section h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 24px 0 8px;
-            color: var(--text-primary);
-        }
-
-        .doc-section p {
-            margin-bottom: 16px;
-            color: var(--text-secondary);
-            font-size: 0.975rem;
-        }
-
-        .doc-section ul, .doc-section ol {
-            margin: 16px 0;
-            padding-left: 24px;
-            color: var(--text-secondary);
-            font-size: 0.975rem;
-        }
-
-        .doc-section li {
-            margin-bottom: 8px;
-        }
-
-        .doc-section a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px dotted var(--accent);
-            transition: var(--transition);
-        }
-
-        .doc-section a:hover {
-            color: var(--accent-hover);
-            border-bottom-style: solid;
-        }
-
-        /* Modern Tables */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            margin: 20px 0;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-
-        th {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-weight: 600;
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Contact Details Card */
-        .contact-box {
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .contact-box strong {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        /* Footer */
-        footer {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 40px 0 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .highlight-var {
-            background-color: #fef08a;
-            color: #854d0e;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-weight: 600;
-        }
-        [data-theme="dark"] .highlight-var {
-            background-color: #854d0e;
-            color: #fef08a;
-        }
-    
-main{max-width:850px;margin:40px auto;padding:24px}h1,h2{margin:1.4em 0 .5em}p{margin:0 0 1em}a{color:#a43f32}</style></head><body data-theme="light"><main><a href="index.html">← Pagewise</a><h1>Pagewise Privacy Policy</h1><p>Developed by Novus HQ · Package: app.novushhq.pagewise</p><p>Effective and updated: October 25, 2026</p>
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pagewise Privacy Policy</title><meta name="description" content="How Pagewise handles local documents, Google AdMob advertising data, consent choices and Android backup.">
+    <link rel="icon" href="../../../assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../../../assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="../../../assets/brand/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/novus.css">
+    <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('novus-theme')==='dark'?'dark':'light')}catch(e){}</script>
+</head><body>
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="../../../index.html" aria-label="Novus HQ home"><svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="logo-tile" width="64" height="64" rx="14"/><path class="logo-mark" d="M17 47V19h8l14 18v-8h8v18h-8L25 29v18z"/><rect class="logo-mark" x="39" y="17" width="8" height="8"/></svg><span>Novus HQ</span></a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="../../../index.html#apps">Apps</a>
+            <a href="../../../index.html#about">About</a>
+            <a href="../../../index.html#contact">Contact</a>
+            <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></svg><svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 12.83A9.53 9.53 0 0 1 12 21.75c-5.285 0-9.75-4.265-9.75-9.75a9.53 9.53 0 0 1 8.92-9.749 8.25 8.25 0 0 0 10.58 10.58h-.001Z"/></svg></button>
+        </nav>
+    </div>
+</header>
+<div class="wrap policy-layout policy-single"><main class="policy"><a class="back-link" href="index.html">← Pagewise</a><h1>Pagewise Privacy Policy</h1><p>Developed by Novus HQ · Package: app.novushhq.pagewise</p><p>Effective and updated: October 25, 2026</p>
 <h2>Summary</h2><p>Pagewise is a PDF reader, editor and scanner. PDF processing takes place on your device, and we do not upload your documents, images, extracted text or PDF passwords to Novus HQ or to advertising services. No account is required. Starting with the ad-supported update, Pagewise includes Google AdMob advertising and Google's User Messaging Platform (UMP) for privacy choices. These services use the internet and process advertising-related data as described below. Earlier ad-free versions do not include these advertising features.</p>
 <h2>Advertising and data collected by Google</h2><p>Pagewise displays adaptive banner ads, occasional interstitial ads at natural breaks after completed tasks, and optional rewarded ads. Completing a rewarded ad grants one hour without ads. Google Mobile Ads SDK may collect and share your IP address (which can estimate approximate location), app and ad interactions such as launches, taps and video views, diagnostic information such as performance and errors, and device or account identifiers such as the Android advertising ID and app set ID. Google uses this information for advertising, analytics and fraud prevention. Advertising data is encrypted in transit using TLS. We do not send the contents or names of your documents to AdMob.</p><p>Depending on your region and privacy choices, Google may serve personalized, non-personalized or limited ads. Non-personalized ads can still process data for delivery, measurement and fraud prevention. Google's handling, retention and deletion of advertising data are governed by its policies. Read <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads">How Google uses advertising data</a>.</p>
 <h2>Consent and ad privacy choices</h2><p>Where required, Google's UMP presents a privacy message before ads can be requested. You can revisit available choices through Settings → Ad privacy when that option is required in your region. You can also reset or delete your advertising ID in Android settings and manage Google ad preferences through <a href="https://myadcenter.google.com/">My Ad Center</a>. Withdrawing consent does not prevent local PDF processing, although the ads available to support the app may change. We store consent preferences and the expiry of any earned ad-free period on your device.</p>
@@ -415,4 +33,35 @@ main{max-width:850px;margin:40px auto;padding:24px}h1,h2{margin:1.4em 0 .5em}p{m
 <h2>Retention and deletion</h2><p>Remove items from the Files list, delete saved files, clear temporary files in Settings, or clear app storage / uninstall Pagewise to remove its private data. Files in shared storage and Android backups may need to be removed separately. Novus HQ has no server copy of your documents. Google determines retention of data collected by its advertising services; use the Google privacy and ad controls linked above for that data. Email support to request deletion of information you have sent us directly.</p>
 <h2>Children</h2><p>Pagewise is a general productivity tool and is not directed at children. We do not knowingly collect children's personal information directly. If you believe a child has provided personal information to us, contact support so we can address it. The advertising SDK is configured to request ads rated G (general audiences); this content limit does not make Pagewise a child-directed service.</p>
 <h2>Security</h2><p>Android’s app sandbox protects Pagewise’s private storage. Locked PDFs use AES-256 encryption. Files you save to shared storage can be read by you and by apps you grant access to, so keep sensitive documents protected.</p>
-<h2>Contact and changes</h2><p>If you email support, we receive only what you choose to send and use it to reply. Please don’t attach sensitive documents unless necessary. Changes to this policy will be published on this page with a new date.</p><p>Novus HQ · <a href="mailto:support@novushq.app">support@novushq.app</a> · <a href="https://novushq.app/">novushq.app</a></p></main></body></html>
+<h2>Contact and changes</h2><p>If you email support, we receive only what you choose to send and use it to reply. Please don’t attach sensitive documents unless necessary. Changes to this policy will be published on this page with a new date.</p><p>Novus HQ · <a href="mailto:support@novushq.app">support@novushq.app</a> · <a href="https://novushq.app/">novushq.app</a></p></main></div>
+<footer class="site-footer">
+    <div class="wrap">
+        <div>
+            <a class="brand" href="../../../index.html"><svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="logo-tile" width="64" height="64" rx="14"/><path class="logo-mark" d="M17 47V19h8l14 18v-8h8v18h-8L25 29v18z"/><rect class="logo-mark" x="39" y="17" width="8" height="8"/></svg><span>Novus HQ</span></a>
+            <p>Android apps for focused, everyday work.</p>
+            <p><a href="mailto:support@novushq.app">support@novushq.app</a></p>
+            <p>&copy; 2026 Novus HQ</p>
+        </div>
+        <div>
+            <h4>Apps</h4>
+            <ul>
+                <li><a href="../../../applications/android/Codeforcesly/index.html">Codeforcesly</a></li>
+                <li><a href="../../../applications/android/Pagewise/index.html">Pagewise</a></li>
+                <li><a href="../../../applications/android/AppBlocker/index.html">FocusGuard</a></li>
+                <li><a href="../../../applications/android/LifeAdmin/index.html">Life Admin</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Privacy</h4>
+            <ul>
+                <li><a href="../../../applications/android/Codeforcesly/privacy-policy.html">Codeforcesly</a></li>
+                <li><a href="../../../applications/android/Pagewise/privacy-policy.html">Pagewise</a></li>
+                <li><a href="../../../applications/android/AppBlocker/privacy-policy.html">FocusGuard</a></li>
+                <li><a href="../../../applications/android/LifeAdmin/privacy-policy.html">Life Admin</a></li>
+                <li><a href="../../../applications/android/Subtrack/privacy-policy.html">SubTrack</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="../../../assets/js/site.js"></script>
+</body></html>

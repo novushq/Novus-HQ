@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Novus HQ">
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <path fill="#FFFFFF" d="M17 47V19h8l14 18v-8h8v18h-8L25 29v18z"/>
+  <rect x="39" y="17" width="8" height="8" fill="#FFFFFF"/>
+</svg>

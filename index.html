@@ -1,269 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novus HQ — Useful software, made with intent</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Novus HQ makes focused Android apps for everyday systems, subscriptions, and competitive programming — with thoughtful UX and privacy by default." />
-  
-  <!-- Typography & CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  
-  <style>
-    /* Prevent standard cursor to allow custom cursor */
-    body, a, button {
-      cursor: none !important;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novus HQ — Android apps</title>
+    <meta name="description" content="Novus HQ designs and builds Android apps, including Codeforcesly and Pagewise, available on Google Play.">
+    <link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/brand/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/novus.css">
+    <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('novus-theme')==='dark'?'dark':'light')}catch(e){}</script>
 </head>
 <body>
-  <!-- Overlay noise and grids -->
-  <div class="noise"></div>
-  <div class="grid-bg"></div>
-
-  <!-- Ambient background glow orbs -->
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-
-  <!-- Navigation Bar -->
-  <nav class="nav">
-    <a href="#" class="nav-logo" id="navLogo">
-      <svg class="logo-svg" width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
-        <defs>
-          <linearGradient id="novusLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#7fffb2" />
-            <stop offset="100%" stop-color="#00e5ff" />
-          </linearGradient>
-        </defs>
-        <rect width="100" height="100" rx="24" fill="rgba(127,255,178,0.1)" stroke="url(#novusLogoGrad)" stroke-width="6"/>
-        <path d="M30 70V30L55 52.5L30 39V70" fill="url(#novusLogoGrad)"/>
-        <path d="M70 30V70L45 47.5L70 61V30" fill="url(#novusLogoGrad)" opacity="0.8"/>
-      </svg>
-      <span>NOVUS<span class="logo-hq">HQ</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#work">Our Apps</a>
-      <a href="#contact" class="nav-cta">Say Hello</a>
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="#top" aria-label="Novus HQ home"><svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="logo-tile" width="64" height="64" rx="14"/><path class="logo-mark" d="M17 47V19h8l14 18v-8h8v18h-8L25 29v18z"/><rect class="logo-mark" x="39" y="17" width="8" height="8"/></svg><span>Novus HQ</span></a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="./index.html#apps">Apps</a>
+            <a href="./index.html#about">About</a>
+            <a href="./index.html#contact">Contact</a>
+            <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></svg><svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 12.83A9.53 9.53 0 0 1 12 21.75c-5.285 0-9.75-4.265-9.75-9.75a9.53 9.53 0 0 1 8.92-9.749 8.25 8.25 0 0 0 10.58 10.58h-.001Z"/></svg></button>
+        </nav>
     </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-tag">
-      <span class="dot"></span>
-      INDEPENDENT STUDIO <span class="tag-divider">/</span> 02 APPS LIVE
-    </div>
-    <h1 class="hero-title">
-      <span class="line">Useful software,</span>
-      <span class="line">made with <span class="accent">intent.</span></span>
-      <span class="line">Built to stay out of the way.</span>
-    </h1>
-    <p class="hero-sub">
-      Novus HQ is an independent Android studio making calm, capable tools for the systems you use every day — from recurring bills to Codeforces progress.
-    </p>
-    <div class="hero-actions">
-      <a href="#work" class="btn-primary">Explore Apps</a>
-      <a href="#about" class="btn-ghost">Our Philosophy</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num" data-target="2">0</div>
-        <div class="stat-label">APPS PUBLISHED</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-num" data-target="1">0</div>
-        <div class="stat-label">IN PIPELINE</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-num" data-target="10">0</div>
-        <div class="stat-label">K+ EXPECTED USERS</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Scrolling Marquee Banner -->
-  <div class="marquee-wrap">
-    <div class="marquee-track">
-      <span>CodeForcesly</span>
-      <span class="sep">•</span>
-      <span>Local-first</span>
-      <span class="sep">•</span>
-      <span>Indie Dev</span>
-      <span class="sep">•</span>
-      <span>Aesthetics</span>
-      <span class="sep">•</span>
-      <span>Android First</span>
-      <span class="sep">•</span>
-      <span>Finance</span>
-      <span class="sep">•</span>
-      <span>Productivity</span>
-      <span class="sep">•</span>
-      <span>CodeForcesly</span>
-      <span class="sep">•</span>
-      <span>Local-first</span>
-      <span class="sep">•</span>
-      <span>Indie Dev</span>
-      <span class="sep">•</span>
-      <span>Aesthetics</span>
-      <span class="sep">•</span>
-      <span>Android First</span>
-      <span class="sep">•</span>
-      <span>Finance</span>
-      <span class="sep">•</span>
-      <span>Productivity</span>
-    </div>
-  </div>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="section-label">OUR PHILOSOPHY</div>
-    <div class="about-grid">
-      <h2 class="section-title">Pushing quality apps at <em>lightspeed.</em></h2>
-      <div class="about-right">
-        <p>We believe software gets better when it respects attention. Each Novus app starts with one clear job, then earns every feature that follows.</p>
-        <p>No bloated dashboards or dark patterns. Just highly-focused, beautiful tools with fast interfaces and privacy-friendly foundations.</p>
-        <div class="capabilities">
-          <div class="cap-item">
-            <span class="cap-num">01</span>
-            Clean Typography & Aesthetics
-          </div>
-          <div class="cap-item">
-            <span class="cap-num">02</span>
-            Local-First Privacy Architecture
-          </div>
-          <div class="cap-item">
-            <span class="cap-num">03</span>
-            Small Surface Area, Deep Utility
-          </div>
+</header>
+<main id="top">
+    <section class="home-hero">
+        <div class="wrap">
+            <h1>Android apps for focused, everyday work.</h1>
+            <p>Novus HQ designs and builds Android apps for competitive programmers, documents and digital wellbeing. Two apps are available on Google Play, and more are in development.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#apps">View apps</a>
+                <a class="btn btn-secondary" href="#contact">Contact</a>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <section class="section" id="apps">
+        <div class="wrap">
+            <div class="section-head"><div><span class="eyebrow">Published</span><h2>Available on Google Play</h2></div></div>
+            <div class="app-grid">
+                <article class="app-card">
+                    <div class="app-card-body">
+                        <div class="app-card-top">
+                            <img class="app-icon-sm" src="./assets/images/codeforcesly/icon.png" alt="">
+                            <div><h3>Codeforcesly</h3><div class="category">Education · Competitive programming</div></div>
+                            <span class="pill pill--live">Available</span>
+                        </div>
+                        <p>Codeforces profiles, rating history, submissions, contests and friends in one clear Android app.</p>
+                        <div class="app-card-actions"><a class="card-link" href="https://play.google.com/store/apps/details?id=com.prafullkumar.codeforcesly" target="_blank" rel="noopener noreferrer">Google Play ↗</a><a class="card-link" href="./applications/android/Codeforcesly/index.html">View details</a></div>
+                    </div>
+                    <div class="app-card-media"><img src="./assets/images/codeforcesly/dashboard.png" alt="Codeforcesly app screen" loading="lazy"></div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-body">
+                        <div class="app-card-top">
+                            <img class="app-icon-sm" src="./assets/images/pagewise/icon.png" alt="">
+                            <div><h3>Pagewise</h3><div class="category">Productivity · PDF tools</div></div>
+                            <span class="pill pill--live">Available</span>
+                        </div>
+                        <p>Merge, split, compress, scan and lock PDFs. Sixteen tools and a fast reader, with files processed on your device.</p>
+                        <div class="app-card-actions"><a class="card-link" href="https://play.google.com/store/apps/details?id=app.novushhq.pagewise" target="_blank" rel="noopener noreferrer">Google Play ↗</a><a class="card-link" href="./applications/android/Pagewise/index.html">View details</a></div>
+                    </div>
+                    <div class="app-card-media"><img src="./assets/images/pagewise/tools.webp" alt="Pagewise app screen" loading="lazy"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="in-progress">
+        <div class="wrap">
+            <div class="section-head"><div><span class="eyebrow">In progress</span><h2>Coming to Google Play</h2></div></div>
+            <div class="app-grid">
+                <article class="app-card">
+                    <div class="app-card-body">
+                        <div class="app-card-top">
+                            <img class="app-icon-sm" src="./assets/images/appblocker/icon.png" alt="">
+                            <div><h3>FocusGuard</h3><div class="category">Productivity · Digital wellbeing</div></div>
+                            <span class="pill pill--progress">In development</span>
+                        </div>
+                        <p>Block Reels, Shorts and distracting apps on a schedule, with focus timers, daily limits and screen-time reports.</p>
+                        <div class="app-card-actions"><a class="card-link" href="./applications/android/AppBlocker/index.html">View details</a></div>
+                    </div>
+                    <div class="app-card-media"><img src="./assets/images/appblocker/blocks.png" alt="FocusGuard app screen" loading="lazy"></div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-body">
+                        <div class="app-card-top">
+                            <img class="app-icon-sm" src="./assets/images/lifeadmin/icon.png" alt="">
+                            <div><h3>Life Admin</h3><div class="category">Productivity · Reminders</div></div>
+                            <span class="pill pill--progress">In development</span>
+                        </div>
+                        <p>Keep track of renewals, warranties and expiry dates with reminders and a monthly calendar.</p>
+                        <div class="app-card-actions"><a class="card-link" href="./applications/android/LifeAdmin/index.html">View details</a></div>
+                    </div>
+                    <div class="app-card-media"><img src="./assets/images/lifeadmin/hero.png" alt="Life Admin app screen" loading="lazy"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="planned">
+        <div class="wrap">
+            <div class="section-head"><div><span class="eyebrow">Planned</span><h2>On the roadmap</h2></div></div>
+            <div class="app-grid app-grid--compact">
+                <a class="app-card app-card--muted" href="./applications/android/Subtrack/index.html">
+                    <div class="app-card-body">
+                        <div class="app-card-top"><span class="app-icon-sm app-icon-placeholder" aria-hidden="true">S</span><div><h3>SubTrack</h3><div class="category">Finance</div></div></div>
+                        <p>Track subscriptions and recurring payments, with monthly and yearly spend at a glance.</p>
+                    </div>
+                </a>
+                <article class="app-card app-card--muted">
+                    <div class="app-card-body">
+                        <div class="app-card-top"><span class="app-icon-sm app-icon-placeholder" aria-hidden="true">S</span><div><h3>SpaceHQ</h3><div class="category">Tools</div></div></div>
+                        <p>See what is using storage on your phone and clear caches and large files safely.</p>
+                    </div>
+                </article>
+                <article class="app-card app-card--muted">
+                    <div class="app-card-body">
+                        <div class="app-card-top"><span class="app-icon-sm app-icon-placeholder" aria-hidden="true">C</span><div><h3>CoinLens</h3><div class="category">Hobbies</div></div></div>
+                        <p>Identify coins from a photo and keep a catalogue of your collection.</p>
+                    </div>
+                </article>
+                <article class="app-card app-card--muted">
+                    <div class="app-card-body">
+                        <div class="app-card-top"><span class="app-icon-sm app-icon-placeholder" aria-hidden="true">+</span><div><h3>More on the way</h3><div class="category">Ideas</div></div></div>
+                        <p>New apps are added to the roadmap as they move from idea to design.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="wrap about-grid">
+            <div>
+                <span class="eyebrow">About</span>
+                <h2>Small, dependable apps.</h2>
+                <p>Novus HQ builds Android apps that each do one job well. Every app is designed for phones and tablets, supports light and dark themes, and is maintained after release.</p>
+            </div>
+            <div class="principles">
+                <div class="principle"><h3>Focused scope</h3><p>Each app is built around one clear task, and new features are added only when they make that task easier.</p></div>
+                <div class="principle"><h3>Clear about data</h3><p>Every app has a plain-language privacy policy that states what is stored, where it is stored and what is shared.</p></div>
+                <div class="principle"><h3>Built for Android</h3><p>Material design, adaptive layouts for tablets, and regular updates through Google Play.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="wrap">
+            <div class="contact-card">
+                <div><h2>Contact</h2><p>Support, feedback and business enquiries.</p></div>
+                <a class="btn btn-primary" href="mailto:support@novushq.app">support@novushq.app</a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="wrap">
+        <div>
+            <a class="brand" href="./index.html"><svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="logo-tile" width="64" height="64" rx="14"/><path class="logo-mark" d="M17 47V19h8l14 18v-8h8v18h-8L25 29v18z"/><rect class="logo-mark" x="39" y="17" width="8" height="8"/></svg><span>Novus HQ</span></a>
+            <p>Android apps for focused, everyday work.</p>
+            <p><a href="mailto:support@novushq.app">support@novushq.app</a></p>
+            <p>&copy; 2026 Novus HQ</p>
+        </div>
+        <div>
+            <h4>Apps</h4>
+            <ul>
+                <li><a href="./applications/android/Codeforcesly/index.html">Codeforcesly</a></li>
+                <li><a href="./applications/android/Pagewise/index.html">Pagewise</a></li>
+                <li><a href="./applications/android/AppBlocker/index.html">FocusGuard</a></li>
+                <li><a href="./applications/android/LifeAdmin/index.html">Life Admin</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Privacy</h4>
+            <ul>
+                <li><a href="./applications/android/Codeforcesly/privacy-policy.html">Codeforcesly</a></li>
+                <li><a href="./applications/android/Pagewise/privacy-policy.html">Pagewise</a></li>
+                <li><a href="./applications/android/AppBlocker/privacy-policy.html">FocusGuard</a></li>
+                <li><a href="./applications/android/LifeAdmin/privacy-policy.html">Life Admin</a></li>
+                <li><a href="./applications/android/Subtrack/privacy-policy.html">SubTrack</a></li>
+            </ul>
+        </div>
     </div>
-  </section>
-
-  <!-- Work (Portfolio) Section -->
-  <section id="work" class="work">
-    <h2 class="section-title">Selected <em>works.</em></h2>
-    <div class="work-grid">
-      <!-- Codeforcesly App Card -->
-      <div class="work-card work-card--large work-card--codeforcesly" onclick="location.href='./applications/android/Codeforcesly/index.html'">
-        <div class="work-card-inner">
-          <div class="work-card-bg" style="--hue: 188;"></div>
-          <div class="work-meta">
-            <span class="work-tag">EDUCATION / CODEFORCES</span>
-            <span class="work-year">LIVE · 2025</span>
-          </div>
-          <div class="work-card-copy">
-            <img class="work-app-icon" src="./assets/images/codeforcesly/icon.png" alt="CodeForcesly app icon" />
-            <h3>CodeForcesly</h3>
-            <p>Visualize Codeforces profiles, ratings, submissions, contests, friends, and solved problems from one focused Android workspace.</p>
-            <a href="./applications/android/Codeforcesly/index.html" class="work-link">View App Details →</a>
-          </div>
-          <img class="work-card-preview" src="./assets/images/codeforcesly/dashboard.png" alt="CodeForcesly profile dashboard" loading="lazy" />
-        </div>
-      </div>
-
-      <!-- Subtrack App Card -->
-      <div class="work-card" onclick="location.href='./applications/android/Subtrack/index.html'">
-        <div class="work-card-inner">
-          <div class="work-card-bg" style="--hue: 145;"></div>
-          <div class="work-meta">
-            <span class="work-tag">FINANCE / UTILITIES</span>
-            <span class="work-year">LIVE · 2026</span>
-          </div>
-          <div class="work-card-copy">
-            <div class="work-app-icon work-app-icon--subtrack" aria-hidden="true">S</div>
-            <h3>SubTrack</h3>
-            <p>Track recurring expenses locally and privately with clear reports that make monthly spend easier to see.</p>
-            <a href="./applications/android/Subtrack/index.html" class="work-link">View App Details →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-card" onclick="location.href='./applications/android/Pagewise/index.html'">
-        <div class="work-card-inner"><div class="work-card-bg" style="--hue:8;"></div>
-          <div class="work-meta"><span class="work-tag">PRODUCTIVITY / PDF TOOLS</span><span class="work-year">LIVE · 2026</span></div>
-          <div class="work-card-copy"><img class="work-app-icon" src="./assets/images/pagewise/icon.png" alt="Pagewise icon"><h3>Pagewise</h3><p>Merge, split, compress, scan and lock PDFs with 16 private, offline tools and a fast reader.</p><a href="./applications/android/Pagewise/index.html" class="work-link">View App Details →</a></div>
-        </div>
-      </div>
-
-      <div class="work-card" onclick="location.href='./applications/android/LifeAdmin/index.html'">
-        <div class="work-card-inner"><div class="work-card-bg" style="--hue:184;"></div>
-          <div class="work-meta"><span class="work-tag">PRODUCTIVITY / REMINDERS</span><span class="work-year">COMING TO GOOGLE PLAY</span></div>
-          <div class="work-card-copy"><img class="work-app-icon" src="./assets/images/lifeadmin/icon.png" alt="Life Admin icon"><h3>Life Admin</h3><p>Track renewals, warranties and expiry dates with private, offline reminders and a monthly calendar.</p><a href="./applications/android/LifeAdmin/index.html" class="work-link">View App Details →</a></div>
-        </div>
-      </div>
-
-      <div class="work-card" onclick="location.href='./applications/android/AppBlocker/index.html'">
-        <div class="work-card-inner"><div class="work-card-bg" style="--hue:160;"></div>
-          <div class="work-meta"><span class="work-tag">PRODUCTIVITY / FOCUS</span><span class="work-year">COMING TO GOOGLE PLAY</span></div>
-          <div class="work-card-copy"><img class="work-app-icon" src="./assets/images/appblocker/icon.png" alt="FocusGuard icon"><h3>FocusGuard — App Blocker</h3><p>Block Reels, Shorts and distracting apps on your schedule. Focus timer, limits and screen-time reports — free, no account.</p><a href="./applications/android/AppBlocker/index.html" class="work-link">View App Details →</a></div>
-        </div>
-      </div>
-
-      <!-- Placeholder Card 2 -->
-      <div class="work-card work-card--pipeline">
-        <div class="work-card-inner">
-          <div class="work-card-bg" style="--hue: 210;"></div>
-          <div class="work-meta">
-            <span class="work-tag font-mono">UTILITIES</span>
-            <span class="work-year">COMING SOON</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px; margin: 16px 0 8px 0;">
-            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="spaceLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00f2fe" />
-                  <stop offset="100%" stop-color="#4facfe" />
-                </linearGradient>
-              </defs>
-              <rect width="100" height="100" rx="24" fill="#111827" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
-              <rect x="30" y="30" width="40" height="40" rx="6" stroke="url(#spaceLogoGrad)" stroke-width="8"/>
-              <line x1="30" y1="50" x2="70" y2="50" stroke="url(#spaceLogoGrad)" stroke-width="6"/>
-            </svg>
-            <h3 style="margin-bottom: 0;">SpaceHQ</h3>
-          </div>
-          <p>Sleek Android storage utility to clean cache and optimize local filesystem space.</p>
-          <span class="work-link" style="opacity: 0.5;">In Pipeline</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="contact-inner">
-      <h2 class="contact-title">Let's craft <br />something new.</h2>
-      <p class="contact-sub">Have an app suggestion or want to collaborate with Novus HQ?</p>
-      <a href="mailto:support@novushq.app" class="contact-cta">
-        support@novushq.app
-        <span class="cta-arrow">↗</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="footer-left">
-      &copy; 2026 Novus HQ. All rights reserved.
-    </div>
-    <div class="footer-right">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#work">Apps</a>
-      <a href="./applications/android/Codeforcesly/privacy-policy.html">Privacy</a>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="main.js"></script>
+</footer>
+<script src="./assets/js/site.js"></script>
 </body>
 </html>
