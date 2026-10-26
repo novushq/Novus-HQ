@@ -64,7 +64,7 @@
                 </div>
                 <div class="meta-item">
                     <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V5"/></svg>
-                    Updated: October 25, 2026
+                    Updated: October 26, 2026
                 </div>
             </div>
         </div>
@@ -158,8 +158,9 @@
         <section id="permissions" class="doc-section">
             <h3>3. Android Permissions — What They Do and Do Not Do</h3>
             <ul>
-                <li><strong>Accessibility service (required for blocking).</strong> Observes which app or web address is in the foreground and whether a Reels/Shorts player is visible, so it can enforce <em>your</em> rules; it is also used to stop FocusGuard being switched off or uninstalled while strict mode is on. It does not read messages, typing or passwords, does not act on your behalf, and what it sees stays in memory — never stored, never transmitted, never shared with the ads SDK. The App explains this on screen before you turn the service on.</li>
-                <li><strong>Usage access (optional).</strong> Used only to compute the on-device statistics in Usage and Reports and to enforce daily time limits.</li>
+                <li><strong>Accessibility service (required for blocking).</strong> FocusGuard uses Android's AccessibilityService API only to: (1) see which app is in the foreground, to block it during your schedules, focus sessions and limits; (2) read the browser address bar, to block the websites and keywords you listed; (3) detect a Reels/Shorts player on screen, to close it; and (4) recognise FocusGuard's own uninstall and switch-off screens in Android Settings, to show a reminder and, while strict mode is on, keep your blocks locked. To enforce a rule it only takes the actions you set up: opening FocusGuard's block screen, pressing Back to leave a short-video feed, or returning to the home screen. It does not read messages, typing or passwords, and what it sees is processed in memory on your phone — never stored, never transmitted, never shared with NovusHQ, Google's ad services or anyone else. The App shows this explanation and asks you to tap <em>Agree and turn on</em> before it opens Accessibility settings; you can choose <em>Not now</em> and turn the service off at any time in Android Settings &gt; Accessibility.</li>
+                <li><strong>Usage access (optional).</strong> Used only to compute the on-device statistics in Usage and Reports and to enforce daily time limits. Usage data is read on your phone and never uploaded.</li>
+                <li><strong>Notification access (optional).</strong> Lets FocusGuard silence notifications from apps while their block is active. It checks only which app posted a notification and dismisses it if that app is blocked; it does not read, store or send notification content.</li>
                 <li><strong>Notifications (optional, Android 13+).</strong> Shows the focus-session countdown.</li>
                 <li><strong>Internet and network state.</strong> Used only by the ads and consent SDKs. Blocking, schedules, limits and statistics work fully offline; while offline, the ad space shows a notice instead of an ad.</li>
                 <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>) and <strong>Privacy Sandbox ad services</strong> (<code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_TOPICS</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>). Added by the Google Mobile Ads SDK for ad delivery, interest-based ads (where consented) and measurement. You control these in Android Settings &gt; Privacy &gt; Ads.</li>
