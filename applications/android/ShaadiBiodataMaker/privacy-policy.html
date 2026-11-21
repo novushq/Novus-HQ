@@ -12,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../assets/css/novus.css">
+    <style>
+        .policy-layout > .policy { min-width: 0; }
+        .toc-card > summary { cursor: pointer; }
+        .policy .doc-section h2 { font-size: 21px; letter-spacing: -0.015em; margin: 0 0 12px; }
+        .policy .doc-section h3 { font-size: 16px; letter-spacing: normal; margin: 22px 0 8px; }
+    </style>
 </head>
 <body>
 <header class="site-header">
@@ -31,28 +37,29 @@
 
     <!-- Sidebar TOC -->
     <aside class="sidebar">
-        <div class="toc-card">
-            <div class="toc-title">ON THIS PAGE</div>
+        <details class="toc-card" open>
+            <summary class="toc-title">ON THIS PAGE</summary>
             <ul class="toc-list">
                 <li><a href="#about" class="toc-link">1. What Shaadi Biodata Maker Is</a></li>
                 <li><a href="#collection" class="toc-link">2. Information We Collect</a></li>
                 <li><a href="#usage" class="toc-link">3. How Your Data Is Used</a></li>
                 <li><a href="#thirdparty" class="toc-link">4. Third-Party Services</a></li>
-                <li><a href="#ads" class="toc-link">5. Advertising & Analytics</a></li>
+                <li><a href="#ads" class="toc-link">5. Advertising</a></li>
                 <li><a href="#payments" class="toc-link">6. Payments</a></li>
                 <li><a href="#sharing" class="toc-link">7. Data Sharing</a></li>
                 <li><a href="#rights" class="toc-link">8. Your Rights</a></li>
                 <li><a href="#children" class="toc-link">9. Children's Privacy</a></li>
-                <li><a href="#security" class="toc-link">10. Security & Retention</a></li>
-                <li><a href="#contact" class="toc-link">11. Contact Info</a></li>
+                <li><a href="#security" class="toc-link">10. Security, Retention and Deletion</a></li>
+                <li><a href="#changes" class="toc-link">11. Changes to This Policy</a></li>
+                <li><a href="#contact" class="toc-link">12. Contact Info</a></li>
             </ul>
-        </div>
+        </details>
     </aside>
 
     <!-- Main Content Area -->
     <main class="content policy">
         <div class="title-section">
-            <h2>Privacy Policy</h2>
+            <h1>Privacy Policy</h1>
             <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 500;"><span class="highlight-var">Shaadi Biodata Maker</span> — Developed by <span class="highlight-var">Novus HQ</span></p>
             <div class="meta-info">
                 <div class="meta-item">
@@ -61,7 +68,7 @@
                 </div>
                 <div class="meta-item">
                     <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V5"/></svg>
-                    Updated: <span class="highlight-var">November 15, 2026</span>
+                    Last updated: <span class="highlight-var">November 21, 2026</span>
                 </div>
             </div>
         </div>
@@ -69,143 +76,135 @@
         <div class="summary-card">
             <div class="summary-title">
                 <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                In Short (TL;DR)
+                Privacy summary
             </div>
             <div class="summary-text">
-                <span class="highlight-var">Your biodata and photos are stored only on your phone. We have no accounts and our servers never receive your details. The free version shows ads through Google AdMob, which may use your device advertising ID. You choose when to export or share a file.</span>
+                <span class="highlight-var">Shaadi Biodata Maker stores profiles and selected photos on your device without an account. You choose where to export, share or back up copies. Google AdMob may collect device identifiers and other information to serve and measure ads.</span>
             </div>
         </div>
 
         <!-- Section 1 -->
         <section id="about" class="doc-section">
-            <h3>1. What Shaadi Biodata Maker Is</h3>
+            <h2>1. What Shaadi Biodata Maker Is</h2>
             <p>Shaadi Biodata Maker is a mobile application that <span class="highlight-var">helps you create a marriage biodata from guided fields and templates, preview it, and export it as a PDF or image to share</span>.</p>
             <p>The App is developed, owned, and operated by <strong>Novus HQ</strong>.</p>
         </section>
 
         <!-- Section 2 -->
         <section id="collection" class="doc-section">
-            <h3>2. Information We Collect</h3>
-            
-            <h4>2.1 Data You Provide Voluntarily</h4>
-            <p>We collect and store data that you explicitly enter inside the App. Depending on your configuration, this may remain stored purely locally on your device or be synchronized with a remote server:</p>
-            <ul>
-                <li><span class="highlight-var">Biodata details you type in (such as name, date of birth, family, education and contact details), up to three photos you choose, and your app settings. This information is stored only on your device. It is not uploaded to us.</span></li>
-            </ul>
-
-            <h4>2.2 Data Collected Automatically by Third Parties / Services</h4>
-            <p>To show ads in the free version, the advertising provider below may collect the following information from your device:</p>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data Category</th>
-                            <th>Third-Party Provider</th>
-                            <th>Primary Purpose</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="highlight-var">Advertising ID, IP address, approximate location, device and ad interaction data</span></td><td>Google AdMob (Google LLC)</td><td>Showing and measuring ads, limiting ad frequency, fraud prevention, and, where you consent, personalised ads</td></tr></tbody>
-                </table>
-            </div>
-
-            <h4>2.3 What We Do NOT Collect</h4>
-            <p>We prioritize your privacy and do not request access to unrelated device systems. We do not access or collect:</p>
-            <ul>
-                <li>Your precise location, contacts, microphone or camera.</li>
-                <li>Your biodata text or photos. They stay on your device; we never receive them.</li>
-                <li>Payment card details. Any purchase is handled by Google Play.</li>
-            </ul>
+            <h2>2. Information We Collect</h2>
+            <h3>2.1 Biodata and preferences</h3>
+            <p>The app stores what you enter, such as names, birth details, education, work, family information, contact details, and any religious or horoscope information you choose to include. It also saves up to three photos per profile, layout choices and app preferences. Novus HQ receives your information when you send it to us, such as in a support email. The editor has no account or server sync.</p>
+            <h3>2.2 Data collected automatically</h3>
+            <p>Google AdMob may collect the advertising ID or other device identifiers, IP address, approximate location derived from IP, app and device information, interactions with ads, and diagnostics. Google User Messaging Platform handles ad consent choices. On supported Android versions, the ad SDK may use Android Privacy Sandbox features to select or measure ads. The app's own diagnostic events are written to Android's local log.</p>
+            <h3>2.3 Android permissions</h3>
+            <p>The app uses internet and network status for ads, consent and purchases when available. It uses the system photo picker to read images you select. On Android 8 and 9, the app requests storage permission when needed to save exports to Downloads. You can deny or revoke it in Android's app settings. Android 10 and later use Android's shared media storage without that permission. The app requests no direct access to precise location, contacts, microphone or camera.</p>
         </section>
 
         <!-- Section 3 -->
         <section id="usage" class="doc-section">
-            <h3>3. How Your Data Is Used</h3>
-            <p>We use the collected information for the following specific purposes:</p>
+            <h2>3. How Your Data Is Used</h2>
             <ul>
-                <li>To provide and maintain the core functionalities of the App.</li>
-                <li>To remember your settings on your device.</li>
-                <li>To show ads that keep the free version available, and to limit how often they appear.</li>
+                <li>Profile details and photos are used to edit, preview, print, export and restore biodatas.</li>
+                <li>Local preferences remember your settings and manage how often the app shows ads.</li>
+                <li>Google uses advertising data to serve and measure ads and help prevent fraud. Consent choices determine which ads can be requested.</li>
+                <li>Purchase data is used to verify and restore Pro access if paid purchases are offered.</li>
+                <li>We use the information you send to respond to your support or privacy request.</li>
             </ul>
         </section>
 
         <!-- Section 4 -->
         <section id="thirdparty" class="doc-section">
-            <h3>4. Third-Party Services</h3>
-            <p>Please review the individual privacy policies of the vendors we use within the App to understand their handling policies:</p>
-            
+            <h2>4. Third-Party Services</h2>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Service Name</th>
-                            <th>Provider</th>
-                            <th>Privacy Policy Reference</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">What it handles</th>
+                            <th scope="col">Privacy policy</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="highlight-var">Google AdMob and User Messaging Platform</span></td><td>Google LLC</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></td></tr><tr><td>Google Play Billing (only if a Pro purchase is offered)</td><td>Google LLC</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></td></tr></tbody>
+                            <td>Google AdMob</td>
+                            <td>Device and ad data to serve ads, measure performance and prevent fraud.</td>
+                            <td><a href="https://policies.google.com/privacy">Google Privacy Policy</a></td>
+                        </tr>
+                        <tr>
+                            <td>Google User Messaging Platform</td>
+                            <td>Ad consent choices.</td>
+                            <td><a href="https://policies.google.com/privacy">Google Privacy Policy</a></td>
+                        </tr>
+                        <tr>
+                            <td>Google Play Billing, if purchases are offered</td>
+                            <td>Payment and purchase records.</td>
+                            <td><a href="https://policies.google.com/privacy">Google Privacy Policy</a></td>
+                        </tr>
+                        <tr>
+                            <td>RevenueCat, if purchases are enabled</td>
+                            <td>An anonymous app user ID, purchase history and entitlement status to verify and restore access.</td>
+                            <td><a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
 
         <!-- Section 5 -->
         <section id="ads" class="doc-section">
-            <h3>5. Advertising & Analytics</h3>
-            <p>The free version shows banner ads, occasional full-screen ads and optional rewarded videos through Google AdMob. In regions where it is required, you are asked for consent before personalised ads, and you can change your choice later in the App settings. The App does not use any other analytics service. You can reset or delete your advertising ID at any time:</p>
-            <ul>
-                <li><strong>Android:</strong> Settings &gt; Google &gt; Ads &gt; Reset/Delete Advertising ID.</li>
-            </ul>
+            <h2>5. Advertising</h2>
+            <p>The free version can show banner, native, full-screen and rewarded ads through Google AdMob. Google's consent form is shown where required. Depending on your consent and Google's settings, ads may be personalised or non-personalised. When the option is available, go to <strong>Settings → Ads → Ad privacy choices</strong> to change or withdraw consent. You can reset or delete the advertising ID in Android's ad settings. The location of that setting varies by Android version.</p>
         </section>
 
         <!-- Section 6 -->
         <section id="payments" class="doc-section">
-            <h3>6. Payments </h3>
-            <p>All features are currently free to use. If a paid Pro option is offered, the purchase is processed by Google Play. We do not receive or store your card details.</p>
+            <h2>6. Payments</h2>
+            <p>If paid Pro access is offered, Google Play processes the payment and RevenueCat may verify your purchase or restore access. Novus HQ and the app do not receive payment card details.</p>
         </section>
 
         <!-- Section 7 -->
         <section id="sharing" class="doc-section">
-            <h3>7. Data Sharing</h3>
-            <p>We <strong>do not sell, trade, or rent</strong> your personal data. Sharing only occurs with the trusted third-party providers mentioned in Section 4 to facilitate app operations, or if mandated by law enforcement.</p>
+            <h2>7. Data Sharing</h2>
+            <p>Novus HQ does not sell your personal data. The app does not send profile details or selected photos to advertising or purchase services. If you share or print an export, the app or recipient you choose gets a copy. If you save a ZIP backup through a cloud file provider, that provider receives the backup. Android can also back up eligible app data if device backup is enabled. Those services handle their copies under their own terms.</p>
         </section>
 
         <!-- Section 8 -->
         <section id="rights" class="doc-section">
-            <h3>8. Your Rights</h3>
-            <p>Depending on your geographic location (e.g. EU/EEA under GDPR, California under CCPA/CPRA, etc.), you have specific statutory rights concerning your personal information, including the right to access, rectify, port, or request erasure of your data.</p>
-            <p>To exercise any of your rights, please reach out to us at <a href="mailto:support@novushq.app">support@novushq.app</a>.</p>
+            <h2>8. Your Rights</h2>
+            <p>You can view, correct, export and delete profiles in the app. Depending on where you live, you may have additional rights to access, correct, obtain a copy of or request deletion of personal data, or to object to certain uses. For information held by Novus HQ, email <a href="mailto:support@novushq.app">support@novushq.app</a>. You can manage ad consent as described in <a href="#ads">Advertising</a>.</p>
         </section>
 
         <!-- Section 9 -->
         <section id="children" class="doc-section">
-            <h3>9. Children's Privacy</h3>
-            <p>We do not knowingly target or collect personal information from children under the age of 13. If you become aware that a child has provided us with personal data, please notify us immediately so we can remove it.</p>
+            <h2>9. Children's Privacy</h2>
+            <p>The app is intended for adults preparing marriage profiles. It is not directed at children under 13. If you believe a child has sent personal information to us, contact us so we can address it.</p>
         </section>
 
         <!-- Section 10 -->
         <section id="security" class="doc-section">
-            <h3>10. Security & Retention</h3>
-            
-            <h4>10.1 Data Security</h4>
-            <p>Your biodata stays in the App's private storage on your device and is protected by Android's app sandbox. Traffic to the ad provider uses TLS. When you export or share a file, you choose the app that receives it, so only share with people you trust.</p>
-            
-            <h4>10.2 Data Retention</h4>
-            <p>We hold no copy of your biodata. It is kept on your device until you delete it or uninstall the App, which removes it. Backups you create with the in-app backup feature are files you save and control. If Android device backup is turned on, Google may back up app data under its own terms.</p>
+            <h2>10. Security, Retention and Deletion</h2>
+            <h3>10.1 Security</h3>
+            <p>Android's app sandbox protects the profile database and photos kept in private app storage. Google and RevenueCat use encrypted connections for their services. Exported documents and ZIP backups are readable files. Store them in a location you trust and share them with intended recipients.</p>
+            <h3>10.2 Retention and deletion</h3>
+            <p>Profiles and photos are kept until you delete them in My Biodatas, clear the app's storage in Android Settings or uninstall the app. Clearing storage or uninstalling removes the app's local preferences too. Separately delete copies in Downloads, backups and shared destinations. You can manage device backups in Android settings. Google and RevenueCat retain data under their own privacy policies. We keep support correspondence as long as needed to respond and meet legal obligations.</p>
         </section>
 
         <!-- Section 11 -->
+        <section id="changes" class="doc-section">
+            <h2>11. Changes to This Policy</h2>
+            <p>We publish changes on this page and update the date above.</p>
+        </section>
+
+        <!-- Section 12 -->
         <section id="contact" class="doc-section">
-            <h3>11. Contact Info</h3>
+            <h2>12. Contact Info</h2>
             <p>For inquiries, support, or data privacy requests, you can reach us at:</p>
-            
+
             <div class="contact-box">
                 <strong>Novus HQ</strong>
                 <p>Email: <a href="mailto:support@novushq.app">support@novushq.app</a></p>
-                <p>Website: <a href="https://novushq.app" target="_blank" rel="noopener noreferrer">novushq.app</a></p>
+                <p><a href="index.html">Shaadi Biodata Maker app page</a></p>
             </div>
         </section>
     </main>
@@ -220,7 +219,7 @@
             <p>&copy; 2026 Novus HQ</p>
         </div>
         <div>
-            <h4>Apps</h4>
+            <h3>Apps</h3>
             <ul>
                 <li><a href="../../../applications/android/Codeforcesly/index.html">Codeforcesly</a></li>
                 <li><a href="../../../applications/android/Pagewise/index.html">Pagewise</a></li>
@@ -230,7 +229,7 @@
             </ul>
         </div>
         <div>
-            <h4>Privacy</h4>
+            <h3>Privacy</h3>
             <ul>
                 <li><a href="../../../applications/android/Codeforcesly/privacy-policy.html">Codeforcesly</a></li>
                 <li><a href="../../../applications/android/Pagewise/privacy-policy.html">Pagewise</a></li>
@@ -242,6 +241,11 @@
         </div>
     </div>
 </footer>
+<script>
+    if (window.matchMedia("(max-width: 900px)").matches) {
+        document.querySelector(".toc-card").open = false;
+    }
+</script>
 <script src="../../../assets/js/site.js"></script>
 </body>
 </html>
