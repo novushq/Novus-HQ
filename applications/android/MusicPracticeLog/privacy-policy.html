@@ -73,7 +73,7 @@
                 In Short (TL;DR)
             </div>
             <div class="summary-text">
-                <span class="highlight-var">Your practice journal (sessions, notes, instruments, goals and settings) is stored only on your phone. There is no account, no cloud sync and no backend server of ours, and Novus HQ never receives your practice data. The App shows ads from Google AdMob, which collects device and advertising data (with consent where the law requires it), and uses Google Play and RevenueCat to sell and verify the optional one-time Pro upgrade. We never sell your data.</span>
+                <span class="highlight-var">Your practice journal (sessions, notes, instruments, goals and settings) is stored only on your phone. There is no account, no cloud sync and no backend server of ours, and Novus HQ never receives your practice data. The App shows ads from Google AdMob, which collects device and advertising data (with consent where the law requires it), and uses Google Play Billing and RevenueCat to sell and verify the optional one-time lifetime Pro upgrade, which removes ads. Excel (.xlsx) and CSV exports are created on your phone and saved only where you choose. We never sell your data.</span>
             </div>
         </div>
 
@@ -95,10 +95,11 @@
                 <li><strong>Active timer:</strong> while a stopwatch is running or paused, an unsaved draft with the same fields plus elapsed time, start time, time zone and a device-boot marker, so the timer survives the App being closed or the phone restarting.</li>
                 <li><strong>Goals:</strong> your optional daily minutes target and weekly practice-days target.</li>
                 <li><strong>Instruments and preferences:</strong> your default instrument, the custom instruments or gear you add, theme (light/dark/system), dynamic-colour choice and whether you finished the first-use setup.</li>
+                <li><strong>Exports you create:</strong> when you export, the App builds the file on your phone from the sessions you chose (all time or a date range, optionally one instrument): either a styled Excel workbook (<code>.xlsx</code>) with two sheets, an <em>Overview</em> sheet with totals and an instrument breakdown and a <em>Practice Sessions</em> sheet listing each session, or a plain CSV file. The App writes it only to the location you pick in Android's file picker. It is never uploaded to Novus HQ or to any ad or payment provider.</li>
             </ul>
 
             <h4>2.2 Data Stored or Collected Automatically</h4>
-            <p>The App itself has no analytics, crash reporting or telemetry. It keeps a few technical values on your device only: when Pro ownership was last verified, the number of reward videos watched and the end of any ad-free window you earned, and a count of launches made without an internet connection. The third-party services built into the App collect the following:</p>
+            <p>The App itself has no analytics, crash reporting or telemetry. It keeps a few technical values on your device only: when Pro ownership was last verified, the number of reward videos watched, and the end of any ad-free window you earned. The third-party services built into the App collect the following:</p>
 
             <div class="table-container">
                 <table>
@@ -113,22 +114,22 @@
                         <tr>
                             <td><span class="highlight-var">Advertising ID, device and app information (such as device model, OS version, app version), IP address and the approximate location derived from it, ad views and taps</span></td>
                             <td><span class="highlight-var">Google AdMob (Google)</span></td>
-                            <td><span class="highlight-var">Showing banner, full-screen and optional reward-video ads; measuring ads and preventing fraud; personalised ads only where you allow them</span></td>
+                            <td><span class="highlight-var">Showing an adaptive banner, occasional full-screen ads at natural breaks and optional rewarded-video ads; measuring ads and preventing fraud; personalised ads only where you allow them</span></td>
                         </tr>
                         <tr>
                             <td><span class="highlight-var">Your ad consent choices and a consent status for your region</span></td>
                             <td><span class="highlight-var">Google User Messaging Platform (Google)</span></td>
-                            <td><span class="highlight-var">Asking for and remembering consent for ads where the law requires it (for example in the EEA, UK and Switzerland)</span></td>
+                            <td><span class="highlight-var">Asking for and remembering your ad privacy choices where the law requires it: GDPR consent in the EEA, UK and Switzerland, and the opt-out of the sale or sharing of personal information under US state privacy laws (such as the CCPA/CPRA)</span></td>
                         </tr>
                         <tr>
                             <td><span class="highlight-var">An anonymous, randomly generated app user ID, your Google Play purchase history for this App (purchase token, product, date), device and app information</span></td>
                             <td><span class="highlight-var">RevenueCat, Inc.</span></td>
-                            <td><span class="highlight-var">Validating the Pro purchase with Google Play and restoring it on a new install</span></td>
+                            <td><span class="highlight-var">Validating the one-time lifetime Pro purchase with Google Play and restoring it on a new install</span></td>
                         </tr>
                         <tr>
                             <td><span class="highlight-var">Your Google account's purchase of Pro and payment details</span></td>
                             <td><span class="highlight-var">Google Play</span></td>
-                            <td><span class="highlight-var">Processing the one-time Pro payment</span></td>
+                            <td><span class="highlight-var">Processing the one-time lifetime Pro payment through Google Play Billing</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -139,7 +140,7 @@
             <p>The App also declares these permissions, which Android grants automatically and which give no access to personal data:</p>
             <ul>
                 <li><strong>Internet (<code>INTERNET</code>) and network state (<code>ACCESS_NETWORK_STATE</code>):</strong> used to load ads, show the consent form, and buy or restore Pro, and to check whether you are online so these are retried when the connection returns. Your practice data is never sent over the network.</li>
-                <li><strong>Foreground service (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> keeps the stopwatch you started running in the background until you pause or finish it.</li>
+                <li><strong>Foreground service (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> keeps the stopwatch you started counting in the background, with its notification, while a timer is running or paused, and stops when you finish or discard the session. The App uses the &ldquo;special use&rdquo; foreground-service type because an ongoing, user-started practice stopwatch fits no other Android category. The service only counts time; it does not access any personal data and sends nothing over the network.</li>
             </ul>
 
             <h4>2.4 What We Do NOT Collect</h4>
@@ -205,9 +206,16 @@
         <!-- Section 5 -->
         <section id="ads" class="doc-section">
             <h3>5. Advertising</h3>
-            <p>The App is supported by ads served by <strong>Google AdMob</strong>: a banner on some screens, an occasional full-screen ad at a natural break after you finish something, and optional reward videos you can choose to watch in Settings to hide all ads for 40 minutes. Ads are limited to content rated for teens or milder. Owners of Pro see no ads.</p>
+            <p>The free version of the App is supported by ads served by <strong>Google AdMob</strong>. Ads are limited to content rated for teens or milder. Owners of Pro see no ads of any kind.</p>
             <ul>
-                <li><strong>Consent:</strong> before any ad is requested, the App checks your consent status with Google's User Messaging Platform. Where the law requires it (for example in the EEA, UK and Switzerland) a consent form is shown, and no ads are requested until you have answered. You can change your choice at any time in Settings &gt; Ad privacy choices.</li>
+                <li><strong>Adaptive banner:</strong> one anchored adaptive banner at the bottom of the screen, sized to your screen width.</li>
+                <li><strong>Paced full-screen (interstitial) ads:</strong> shown only at a natural break, when you return to a main tab after completing a task (such as saving a session, saving your goals or finishing an export), and only after at least two completed tasks, never in the first minute of use and at most once every three minutes. Cancelling or backing out without finishing never triggers one.</li>
+                <li><strong>Opt-in rewarded ads:</strong> in Settings you can choose to watch short reward videos; every two videos hide banners and full-screen ads for 40 minutes (stacking, up to 24 hours). The count of videos watched and the end time of your ad-free window are stored only on your device.</li>
+            </ul>
+            <ul>
+                <li><strong>Consent (GDPR):</strong> on every launch, before any ad is requested, the App checks your consent status with Google's User Messaging Platform (UMP). In the EEA, the UK and Switzerland a consent form is shown, and no ads are requested until you have answered. If you withdraw consent, ad requests stop.</li>
+                <li><strong>US state privacy laws:</strong> where a US state privacy law applies (such as California's CCPA/CPRA and other state laws that give you a right to opt out of targeted advertising or the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of personal information), the same Google UMP tool lets you opt out of your data being used for personalised ads.</li>
+                <li><strong>Changing your choice:</strong> wherever one of these laws applies to you, the App shows <strong>Settings &gt; Ad privacy choices</strong>, which reopens Google's privacy form so you can change or withdraw your choice at any time.</li>
                 <li><strong>Personalised and non-personalised ads:</strong> if you consent, Google may use your advertising ID and device data to show ads based on your interests. If you do not, Google shows non-personalised ads, which still use limited data (such as approximate location from your IP address) for delivery, frequency capping, measurement and fraud prevention.</li>
                 <li><strong>Advertising ID:</strong> you can reset or delete your advertising ID at any time in Android Settings &gt; Google &gt; Ads (on newer phones: Settings &gt; Security &amp; privacy &gt; Privacy &gt; Ads). Deleting it stops it being used for personalised ads.</li>
             </ul>
@@ -217,8 +225,8 @@
         <!-- Section 6 -->
         <section id="payments" class="doc-section">
             <h3>6. Payments</h3>
-            <p>Logging, the timer, goals, streaks and your full history are free. <strong>Music Practice Log Pro</strong> is an optional one-time purchase that unlocks detailed statistics and spreadsheet export and removes ads. During the current launch offer, the Pro statistics and export features are available to everyone at no cost (ads are still shown unless you own Pro).</p>
-            <p>Payments are processed entirely by <strong>Google Play</strong> under your Google account. Novus HQ never sees or stores your card or payment details. The App uses <strong>RevenueCat</strong> to confirm the purchase with Google Play: when the App starts and when you buy or restore Pro, RevenueCat receives an anonymous app user ID and your purchase record for this App. The App then remembers on your device that Pro was verified, so Pro keeps working offline.</p>
+            <p>Logging, the timer, goals, streaks and your full history are free. <strong>Music Practice Log Pro</strong> is an optional one-time lifetime purchase (not a subscription) that unlocks detailed statistics and the Excel and CSV export and removes all ads. During the current launch offer, the Pro statistics and export features are available to everyone at no cost (ads are still shown unless you own Pro).</p>
+            <p>Payments are processed entirely by <strong>Google Play</strong> through Google Play Billing under your Google account. Novus HQ never sees or stores your card or payment details. The App uses <strong>RevenueCat</strong> to confirm the purchase with Google Play: when the App starts and when you buy or restore Pro, RevenueCat receives an anonymous app user ID and your purchase record for this App. The App then remembers on your device that Pro was verified, so Pro keeps working offline.</p>
         </section>
 
         <!-- Section 7 -->
@@ -228,7 +236,7 @@
             <ul>
                 <li>Google AdMob and the Google User Messaging Platform receive the advertising and consent data described in Section 2.2, to show ads.</li>
                 <li>RevenueCat and Google Play receive purchase data, to sell and verify Pro.</li>
-                <li><strong>Exports you create:</strong> when you export your journal (Excel workbook or CSV), the App writes the file only to the location you pick in Android's file picker. What happens to that file afterwards (for example if you save it to a cloud drive or share it) is up to you and that service.</li>
+                <li><strong>Exports you create:</strong> when you export your journal (a two-sheet Excel <code>.xlsx</code> workbook or a CSV file), the App creates the file on your phone and writes it only to the location you pick in Android's file picker; Novus HQ and the ad and payment providers never receive it. What happens to that file afterwards (for example if you save it to a cloud drive or share it) is up to you and that service.</li>
                 <li>If required by law, we would disclose the limited information we hold, which in practice is only the content of emails you send us.</li>
             </ul>
         </section>
@@ -244,6 +252,7 @@
                 <li><strong>Data held by third parties:</strong> requests about ad or purchase data can be made to Google and RevenueCat using the links in Section 4; we will help you if you contact us.</li>
             </ul>
             <p>To exercise any of your rights, or if you have a complaint, email us at <a href="mailto:support@novushq.app">support@novushq.app</a>. You may also complain to your local data protection authority.</p>
+            <p><strong>US state privacy rights:</strong> if you live in a US state with a consumer privacy law (such as California under the CCPA/CPRA), you may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of your personal information for targeted advertising. Novus HQ does not sell your data for money; the only such use is Google's use of advertising data for personalised ads, which you can opt out of in Settings &gt; Ad privacy choices (shown where your state's law applies) or by deleting your advertising ID. Buying Pro also removes all ads.</p>
         </section>
 
         <!-- Section 9 -->
