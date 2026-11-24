@@ -62,7 +62,7 @@
                 </div>
                 <div class="meta-item">
                     <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V5"/></svg>
-                    Last updated: <span class="highlight-var">November 23, 2026</span>
+                    Last updated: <span class="highlight-var">November 24, 2026</span>
                 </div>
             </div>
         </div>
@@ -73,14 +73,14 @@
                 In Short (TL;DR)
             </div>
             <div class="summary-text">
-                <span class="highlight-var">Your practice journal (sessions, notes, instruments, goals and settings) is stored only on your phone. There is no account, no cloud sync and no backend server of ours, and Novus HQ never receives your practice data. The App shows ads from Google AdMob, which collects device and advertising data (with consent where the law requires it), and uses Google Play Billing and RevenueCat to sell and verify the optional one-time lifetime Pro upgrade, which removes ads. Excel (.xlsx) and CSV exports are created on your phone and saved only where you choose. We never sell your data.</span>
+                <span class="highlight-var">Your practice journal (sessions, notes, audio takes, routines, imported PDF scores, annotations, tempo presets, reminders, goals and settings) is stored only on your phone. There is no account, no cloud sync and no backend server of ours, and Novus HQ never receives your practice data. Microphone permission is requested strictly on demand when you open the Chromatic Tuner (in-memory pitch detection only) or record a local Audio Take. The App shows ads from Google AdMob (with consent where the law requires it) and uses Google Play Billing and RevenueCat for the optional one-time lifetime Pro upgrade, which removes ads. Exports (Excel, CSV, printable PDF reports and .mplbackup archives) are created on your phone and saved only where you choose. We never sell your data.</span>
             </div>
         </div>
 
         <!-- Section 1 -->
         <section id="about" class="doc-section">
             <h3>1. What Music Practice Log Is</h3>
-            <p>Music Practice Log (the &ldquo;App&rdquo;, package <code>app.novushq.musicpracticelog</code>) is a mobile application that <span class="highlight-var">lets musicians time or log their practice sessions, write notes about what they practised, set daily and weekly practice goals, and see streaks and statistics, all without creating an account</span>.</p>
+            <p>Music Practice Log (the &ldquo;App&rdquo;, package <code>app.novushq.musicpracticelog</code>) is an offline musician toolkit and mobile application that <span class="highlight-var">lets musicians time or log practice sessions, practise with a built-in metronome, chromatic tuner and 12-note drone, record local audio takes, follow step-by-step practice routines, read and annotate local PDF sheet music, set goals and local reminders, and export or back up their data — all without creating an account</span>.</p>
             <p>The App is developed, owned, and operated by <strong>Novus HQ</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy covers only the App.</p>
         </section>
 
@@ -91,11 +91,11 @@
             <h4>2.1 Data You Enter (stays on your device)</h4>
             <p>Everything you type or choose in the App is saved in a private database and settings file inside the App's own storage on your phone. It is <strong>not</strong> uploaded to Novus HQ or to any third party, and it is excluded from Android cloud backup and device-to-device transfer.</p>
             <ul>
-                <li><strong>Practice sessions:</strong> the practice date, duration (in seconds), the instrument or equipment name, the optional focus you type (for example a piece or technique), optional notes, whether the session was timed or added manually, and when it was created and last edited.</li>
+                <li><strong>Practice sessions &amp; audio takes:</strong> the practice date, duration (in seconds), instrument or equipment name, optional focus, notes, target BPM, linked routine or PDF score, and any local AAC/M4A audio takes you choose to record in the App's private storage.</li>
                 <li><strong>Active timer:</strong> while a stopwatch is running or paused, an unsaved draft with the same fields plus elapsed time, start time, time zone and a device-boot marker, so the timer survives the App being closed or the phone restarting.</li>
-                <li><strong>Goals:</strong> your optional daily minutes target and weekly practice-days target.</li>
-                <li><strong>Instruments and preferences:</strong> your default instrument, the custom instruments or gear you add, theme (light/dark/system), dynamic-colour choice and whether you finished the first-use setup.</li>
-                <li><strong>Exports you create:</strong> when you export, the App builds the file on your phone from the sessions you chose (all time or a date range, optionally one instrument): either a styled Excel workbook (<code>.xlsx</code>) with two sheets, an <em>Overview</em> sheet with totals and an instrument breakdown and a <em>Practice Sessions</em> sheet listing each session, or a plain CSV file. The App writes it only to the location you pick in Android's file picker. It is never uploaded to Novus HQ or to any ad or payment provider.</li>
+                <li><strong>Routines, PDF scores &amp; tempo presets:</strong> reusable practice routines, saved metronome presets, local PDF sheet music files you import via Android's document picker or Share sheet, and any vector pen/highlighter annotations you draw on them.</li>
+                <li><strong>Goals, reminders &amp; preferences:</strong> your optional daily minutes target, weekly practice-days target, local practice reminder schedule, default and custom instruments, tuner/metronome preferences, and theme.</li>
+                <li><strong>Exports &amp; local backups you create:</strong> when you export, the App builds the file on your phone: an Excel workbook (<code>.xlsx</code>), a CSV file, a printable A4 PDF practice report, or a restorable <code>.mplbackup</code> archive. The App writes it only to the location you pick in Android's file picker and never uploads it.</li>
             </ul>
 
             <h4>2.2 Data Stored or Collected Automatically</h4>
@@ -136,30 +136,33 @@
             </div>
 
             <h4>2.3 Data Accessed Through Permissions</h4>
-            <p><strong>Notifications (<code>POST_NOTIFICATIONS</code>).</strong> On Android 13 and later the App asks for this permission the first time a practice timer is running. It is used only to show the ongoing stopwatch notification with Pause, Resume and Finish buttons while a timer is active. The notification shows your instrument and elapsed time and is created on your device; nothing about it is sent anywhere. If you decline, the timer still works inside the App. You can turn notifications on or off at any time in Android Settings &gt; Apps &gt; Music Practice Log &gt; Notifications.</p>
+            <p><strong>Microphone (<code>RECORD_AUDIO</code>).</strong> Requested strictly on demand when you explicitly tap the Chromatic Tuner or start recording an Audio Take — never on app launch. In the Chromatic Tuner, microphone audio is analysed strictly in memory on your device to measure pitch and is never saved or transmitted. When you record an Audio Take, the recording is saved only inside the App's private storage on your phone and is never uploaded anywhere unless you explicitly tap Share. You can use the Metronome, Drone Generator, timer, journal, routines, and PDF viewer without granting microphone access.</p>
+            <p><strong>Notifications (<code>POST_NOTIFICATIONS</code>).</strong> On Android 13 and later the App asks for this permission only when a practice timer starts or when you turn on optional local practice reminders. It is used to show the ongoing stopwatch notification (with Pause, Resume, Finish, and Stop click controls) and local WorkManager practice reminders. Nothing about your notifications is sent over the network. You can revoke permission at any time in Android Settings &gt; Apps &gt; Music Practice Log &gt; Notifications.</p>
             <p>The App also declares these permissions, which Android grants automatically and which give no access to personal data:</p>
             <ul>
-                <li><strong>Internet (<code>INTERNET</code>) and network state (<code>ACCESS_NETWORK_STATE</code>):</strong> used to load ads, show the consent form, and buy or restore Pro, and to check whether you are online so these are retried when the connection returns. Your practice data is never sent over the network.</li>
-                <li><strong>Foreground service (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> keeps the stopwatch you started counting in the background, with its notification, while a timer is running or paused, and stops when you finish or discard the session. The App uses the &ldquo;special use&rdquo; foreground-service type because an ongoing, user-started practice stopwatch fits no other Android category. The service only counts time; it does not access any personal data and sends nothing over the network.</li>
+                <li><strong>Internet (<code>INTERNET</code>) and network state (<code>ACCESS_NETWORK_STATE</code>):</strong> used to load ads, show the consent form, and buy or restore Pro, and to check whether you are online so these are retried when the connection returns. Your practice data, recordings and PDFs are never sent over the network.</li>
+                <li><strong>Foreground service (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code>, <code>FOREGROUND_SERVICE_MICROPHONE</code>):</strong> keeps your active practice stopwatch (and optional in-session audio recording) running accurately in the background while a session is active, and stops cleanly when you finish or discard it.</li>
             </ul>
 
             <h4>2.4 What We Do NOT Collect</h4>
-            <p>The App does not request or access your location (GPS), camera, microphone, contacts, photos, media files, SMS, call logs or the list of other apps. It does not record audio. We do not see your payment card details. There is no sign-in, so we do not hold your name, email address or any profile.</p>
+            <p>The App does not request or access your location (GPS), camera, contacts, photos, SMS, call logs or the list of other apps. We do not upload your audio takes, PDFs, or journal entries. We do not see your payment card details. There is no sign-in, so we do not hold your name, email address or any profile.</p>
         </section>
 
         <!-- Section 3 -->
         <section id="usage" class="doc-section">
             <h3>3. How Your Data Is Used</h3>
             <ul>
-                <li><strong>Practice sessions, timer draft, goals and instruments:</strong> to show your log, today's progress, streaks and statistics on your device, and to build an export file when you ask for one.</li>
-                <li><strong>Preferences:</strong> to apply your theme and defaults.</li>
-                <li><strong>Notification permission:</strong> to show the running timer's controls.</li>
+                <li><strong>Practice sessions, timer draft, routines, tempo presets, goals and instruments:</strong> to show your log, search results, today's progress, streaks, 12-week consistency heatmap, home screen widgets and statistics on your device, and to build export or backup files when you ask for them.</li>
+                <li><strong>Microphone permission (on-demand only):</strong> to measure pitch strictly in memory when you open the Chromatic Tuner, or to record a local Audio Take inside the App's private storage when you tap Record.</li>
+                <li><strong>Imported PDF scores &amp; annotations:</strong> to render your sheet music offline and save your pen/highlighter strokes locally on your phone.</li>
+                <li><strong>Preferences &amp; local reminders:</strong> to apply your theme, tuner/metronome defaults, and schedule local WorkManager practice reminders with smart-skip.</li>
+                <li><strong>Notification permission:</strong> to show the running timer's controls (Pause, Resume, Finish, Stop click) and deliver optional local practice reminders.</li>
                 <li><strong>Advertising ID, device information and ad interactions (Google AdMob):</strong> to serve and measure ads, which keep the core App free.</li>
                 <li><strong>Consent choices (Google UMP):</strong> to respect your choice about how ads may use your data.</li>
                 <li><strong>Anonymous app user ID and purchase history (RevenueCat, Google Play):</strong> to unlock and restore the Pro upgrade.</li>
                 <li><strong>Reward-video count and ad-free window (on device):</strong> to hide ads for 40 minutes after you choose to watch two reward videos.</li>
             </ul>
-            <p>We do not use your data for profiling by Novus HQ, and we never use your practice records for advertising.</p>
+            <p>We do not use your data for profiling by Novus HQ, and we never use your practice records, audio recordings or PDFs for advertising.</p>
         </section>
 
         <!-- Section 4 -->
@@ -225,18 +228,18 @@
         <!-- Section 6 -->
         <section id="payments" class="doc-section">
             <h3>6. Payments</h3>
-            <p>Logging, the timer, goals, streaks and your full history are free. <strong>Music Practice Log Pro</strong> is an optional one-time lifetime purchase (not a subscription) that unlocks detailed statistics and the Excel and CSV export and removes all ads. During the current launch offer, the Pro statistics and export features are available to everyone at no cost (ads are still shown unless you own Pro).</p>
+            <p>Logging, the crash-safe timer, built-in metronome, chromatic tuner, 12-note drone, in-session audio recording, practice routines, offline PDF score viewer, instant search, 12-week heatmap, local reminders, home screen widgets, goals, streaks and your full history are free. <strong>Music Practice Log Pro</strong> is an optional one-time lifetime purchase (not a subscription) that unlocks detailed statistics &amp; By Piece breakdowns, Audio A–B Loop &amp; pitch-preserving slow-down (0.5&times;&ndash;1.5&times;), PDF score pen/highlighter annotation, Excel/CSV/PDF teacher reports, restorable <code>.mplbackup</code> local backups, and removes all ads forever. During the current launch offer, Pro features are available to everyone at no cost (ads are still shown unless you own Pro).</p>
             <p>Payments are processed entirely by <strong>Google Play</strong> through Google Play Billing under your Google account. Novus HQ never sees or stores your card or payment details. The App uses <strong>RevenueCat</strong> to confirm the purchase with Google Play: when the App starts and when you buy or restore Pro, RevenueCat receives an anonymous app user ID and your purchase record for this App. The App then remembers on your device that Pro was verified, so Pro keeps working offline.</p>
         </section>
 
         <!-- Section 7 -->
         <section id="sharing" class="doc-section">
             <h3>7. Data Sharing</h3>
-            <p>We <strong>do not sell, trade, or rent</strong> your personal data, and Novus HQ does not receive your practice data at all. Data leaves your device only in these cases:</p>
+            <p>We <strong>do not sell, trade, or rent</strong> your personal data, and Novus HQ does not receive your practice data, recordings or PDFs at all. Data leaves your device only in these cases:</p>
             <ul>
                 <li>Google AdMob and the Google User Messaging Platform receive the advertising and consent data described in Section 2.2, to show ads.</li>
                 <li>RevenueCat and Google Play receive purchase data, to sell and verify Pro.</li>
-                <li><strong>Exports you create:</strong> when you export your journal (a two-sheet Excel <code>.xlsx</code> workbook or a CSV file), the App creates the file on your phone and writes it only to the location you pick in Android's file picker; Novus HQ and the ad and payment providers never receive it. What happens to that file afterwards (for example if you save it to a cloud drive or share it) is up to you and that service.</li>
+                <li><strong>Exports, backups &amp; shared takes you initiate:</strong> when you export an Excel <code>.xlsx</code> workbook, CSV file, printable PDF report, or <code>.mplbackup</code> archive, or explicitly tap Share on an Audio Take, Android writes or hands that file only to the destination app or folder you choose; Novus HQ and the ad and payment providers never receive it.</li>
                 <li>If required by law, we would disclose the limited information we hold, which in practice is only the content of emails you send us.</li>
             </ul>
         </section>
@@ -246,9 +249,9 @@
             <h3>8. Your Rights</h3>
             <p>Depending on where you live (for example the EU/EEA and UK under the GDPR, or California under the CCPA/CPRA), you have the right to access, correct, delete and export your personal data, to object to or restrict its use, to withdraw consent, and not to be discriminated against for using these rights.</p>
             <ul>
-                <li><strong>Access, correct, export:</strong> your practice data is on your device; you can view and edit every session in the App and export it at any time.</li>
+                <li><strong>Access, correct, export:</strong> your practice data is on your device; you can view and edit every session in the App and export or back it up at any time.</li>
                 <li><strong>Delete:</strong> see Section 10.3.</li>
-                <li><strong>Withdraw consent:</strong> change ad consent in Settings &gt; Ad privacy choices, reset your advertising ID in Android settings, or revoke the notification permission in Android settings.</li>
+                <li><strong>Withdraw consent:</strong> change ad consent in Settings &gt; Ad privacy choices, reset your advertising ID in Android settings, or revoke Microphone or Notification permissions at any time in Android Settings &gt; Apps &gt; Music Practice Log &gt; Permissions.</li>
                 <li><strong>Data held by third parties:</strong> requests about ad or purchase data can be made to Google and RevenueCat using the links in Section 4; we will help you if you contact us.</li>
             </ul>
             <p>To exercise any of your rights, or if you have a complaint, email us at <a href="mailto:support@novushq.app">support@novushq.app</a>. You may also complain to your local data protection authority.</p>
@@ -270,7 +273,7 @@
 
             <h4>10.2 Data Retention</h4>
             <ul>
-                <li><strong>Practice sessions, goals, instruments and preferences:</strong> kept on your device until you delete them, clear the App's data or uninstall the App.</li>
+                <li><strong>Practice sessions, audio takes, routines, imported PDF scores, annotations, tempo presets, reminders, goals, instruments and preferences:</strong> kept in the App's private storage on your device until you delete them, clear the App's data or uninstall the App.</li>
                 <li><strong>Timer draft:</strong> kept only until you finish or discard the session.</li>
                 <li><strong>Ad, consent and purchase data held by Google and RevenueCat:</strong> kept according to their own policies linked in Section 4. Your Pro purchase record stays with Google Play so you can restore it.</li>
                 <li><strong>Emails you send us:</strong> kept only as long as needed to answer you.</li>
@@ -278,7 +281,7 @@
 
             <h4>10.3 How to Delete Your Data</h4>
             <ul>
-                <li><strong>In the App:</strong> delete single sessions from the log, or use Settings &gt; Delete all practice data to permanently erase all sessions, the active timer, goals and the default instrument.</li>
+                <li><strong>In the App:</strong> delete single sessions, audio takes, routines, or PDF scores individually, or use Settings &gt; Delete all practice data to permanently erase all sessions, active timer, audio takes, routines, imported PDFs, tempo presets, reminders, goals and your default instrument.</li>
                 <li><strong>Clear app data or uninstall:</strong> Android Settings &gt; Apps &gt; Music Practice Log &gt; Storage &gt; Clear storage, or uninstalling, erases everything the App stored on the phone. Because there is no cloud backup, this cannot be undone.</li>
                 <li><strong>Ad data:</strong> reset or delete your advertising ID as described in Section 5.</li>
                 <li><strong>By email:</strong> we hold no account or practice data for you, but you can email <a href="mailto:support@novushq.app">support@novushq.app</a> and we will help you request deletion of purchase or ad data from RevenueCat and Google.</li>
