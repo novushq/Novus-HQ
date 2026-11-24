@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocusGuard — App Blocker & Screen Time Manager</title>
-    
+    <title>FocusGuard — App Blocker, Reels &amp; Shorts Filter &amp; Pomodoro Timer</title>
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Block Reels, Shorts and distracting apps with FocusGuard. Schedules, focus timer, app limits and screen-time insights. Free, no account, rules stay on your phone.">
+    <meta name="description" content="Block apps, websites, Reels and Shorts with FocusGuard. Set recurring schedules, daily screen-time limits, a Pomodoro focus timer, strict mode commitments and track your discipline streak. No account required; rules stay on your device.">
 
     <link rel="icon" href="../../../assets/brand/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../../../assets/brand/favicon-32.png" sizes="32x32" type="image/png">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../assets/css/novus.css">
 </head>
-<body style="--app-accent: #0f766e;">
+<body style="--app-accent: #3155FA;">
 <header class="site-header">
     <div class="wrap">
         <a class="brand" href="../../../index.html" aria-label="Novus HQ home"><svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="logo-tile" width="64" height="64" rx="14"/><path class="logo-mark" d="M17 47V19h8l14 18v-8h8v18h-8L25 29v18z"/><rect class="logo-mark" x="39" y="17" width="8" height="8"/></svg><span>Novus HQ</span></a>
@@ -36,13 +36,13 @@
         <div>
             <div class="app-icon"><img src="../../../assets/images/appblocker/icon.png" alt="FocusGuard app icon"></div>
             <h1 class="hero-title">FocusGuard</h1>
-            <div class="hero-tagline">App Blocker & Screen Time Manager</div>
-            <p class="hero-desc">Block Reels, Shorts and distracting apps with FocusGuard. Schedules, focus timer, app limits and screen-time insights. Free, no account, and your rules stay on your phone.</p>
+            <div class="hero-tagline">Block Apps, Websites, Reels &amp; Shorts</div>
+            <p class="hero-desc">Stop losing hours to endless feeds. FocusGuard combines an app blocker, website blocker, Reels &amp; Shorts filter, daily screen-time limits, Pomodoro focus timer, and strict mode — with no account required and all rules stored on your device.</p>
             <div class="badge-container"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=app.novushq.appblocker" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2c-.3.3-.5.8-.5 1.4v16.8c0 .6.2 1.1.5 1.4l.1.1L13.1 12v-.2L3.7 2.1l-.1.1zm12.6 12.9-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1zm-.1.1L12.9 12l-9.3 9.3c.3.4.9.4 1.5.1l11-6.2m0-6.4-11-6.2c-.6-.4-1.2-.3-1.5.1l9.3 9.3 3.2-3.2z"/></svg>Get it on Google Play</a><span class="pill pill--live">Available</span></div>
         </div>
         <div class="mockup-container">
             <div class="mockup-wrapper">
-                <img src="../../../assets/images/appblocker/blocks.png" alt="FocusGuard Blocks screen" class="mockup-image">
+                <img src="../../../assets/images/appblocker/s1-hero.webp" alt="FocusGuard revamped dashboard — Block apps, keep focus" class="mockup-image">
             </div>
         </div>
     </section>
@@ -51,19 +51,20 @@
     <section class="detailed-desc-section">
         <h2 class="section-title">About FocusGuard</h2>
         <div class="detailed-desc-content">
-            <p><strong>FocusGuard</strong> is designed to give you back your attention. Endless Reels, Shorts and distracting apps are engineered to keep you scrolling; FocusGuard closes them the moment they open — during work hours, at bedtime or all day — while the rest of each app keeps working. One-tap focus sessions, daily time caps, keyword and adult-content blocking, and honest screen-time reports complete the toolkit. Every feature is free.</p>
+            <p><strong>FocusGuard</strong> helps you take back your attention without locking away the useful parts of your phone. Block Instagram Reels, YouTube Shorts, TikTok, Facebook Reels, and Snapchat Spotlight while keeping messages, search, and chosen videos accessible. Pair short-video rules with recurring app and website schedules, daily screen-time limits, a Pomodoro focus timer, daily task planning, and strict-mode commitments.</p>
 
-            <h3>Key Highlights & Philosophy</h3>
-            <p>FocusGuard needs no account, no analytics SDKs, no servers. Your rules and statistics never leave your phone's sandbox, and blocking works offline. The accessibility service that enforces your blocks sees only which app or site is on screen — never messages, typing or passwords — and what it sees is never transmitted.</p>
-            <p>FocusGuard is free for everyone thanks to light ads from Google AdMob: one small banner and an occasional ad when you finish a task. Never on the block screen, never mid-task — and one short video in Settings makes the app ad-free for an hour. The ads SDK never receives your rules or screen time; see the <a href="privacy-policy.html">privacy policy</a>.</p>
+            <h3>Privacy &amp; On-Device Architecture</h3>
+            <p>No account is required. Your blocking rules, schedules, daily tasks, discipline score, and screen-time history stay strictly inside your phone's local storage, and enforcement works completely offline. Export and restore your rules to a local backup file whenever you switch devices.</p>
+            <p>FocusGuard uses the Android Accessibility API solely to detect foreground apps, supported browser addresses, and short-video players so it can apply your chosen blocks — never reading messages, keystrokes, or passwords. FocusGuard is supported by light Google AdMob ads (with UMP consent); see the <a href="privacy-policy.html">privacy policy</a> for full details.</p>
 
             <h3>Core Capabilities</h3>
             <ul>
-                <li><strong>Reels & Shorts blocking:</strong> Instagram Reels, YouTube Shorts, TikTok, Facebook Reels and Snapchat Spotlight close instantly, on your schedule. Messages, search and chosen videos keep working.</li>
-                <li><strong>App & website schedules:</strong> Work hours, bedtime or all-day windows per app or site, with day picker and overnight support.</li>
-                <li><strong>Focus timer & limits:</strong> One-tap sessions (15 min to 2 h, also from Quick Settings), daily time caps, open limits and a mindful pause before tempting apps.</li>
-                <li><strong>Strict mode & filters:</strong> Lock blocks for hours, block adult sites and keyword addresses across major browsers.</li>
-                <li><strong>Usage & reports:</strong> Screen-time hero, hourly rhythm, per-app session drill-downs and weekly reports — all computed on-device.</li>
+                <li><strong>Reels &amp; Shorts blocking:</strong> Close Instagram Reels, YouTube Shorts, TikTok, Facebook Reels, and Snapchat Spotlight all day or on your own schedule while keeping the rest of the app usable.</li>
+                <li><strong>App &amp; website blocker:</strong> Group distracting apps into recurring schedules (workday, study sprint, overnight bedtime) and block distracting domains across supported browsers.</li>
+                <li><strong>Pomodoro focus timer &amp; task planner:</strong> Start 1-tap Classic (25/5), Deep work (50/10), or Quick (15/3) sprints, block chosen apps while focusing, silence notifications, and launch sessions directly from today's tasks.</li>
+                <li><strong>Daily limits &amp; shared pools:</strong> Cap daily time or app opens, add a mindful breathing pause before opening tempting apps, or share one daily allowance across a group of apps.</li>
+                <li><strong>Strict mode &amp; PIN lock:</strong> Commit from 1 hour to 7 days so blocks cannot be loosened inside FocusGuard, protected by a local PIN and optional pause countdown.</li>
+                <li><strong>Discipline score &amp; insights:</strong> Follow weekly screen-time trends, your 7-day rules-held score, current and best streaks, and a 13-week consistency heatmap.</li>
             </ul>
         </div>
     </section>
@@ -79,86 +80,90 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                 </div>
-                <h3>Private & Works Offline</h3>
-                <p>No account, no analytics. Blocking works offline, and your rules and screen-time stats never leave your phone.</p>
+                <h3>Private &amp; Works Offline</h3>
+                <p>No sign-up, no cloud sync. Blocking runs locally on your device even offline, with file-based backup &amp; restore.</p>
             </div>
             <!-- Feature 2 -->
             <div class="feature-card">
                 <div class="feature-icon">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <h3>Reels & Shorts Killer</h3>
-                <p>Short-form feeds close the instant they open — on your schedule — while chats, search and chosen videos keep working.</p>
+                <h3>Block Reels, Keep Apps</h3>
+                <p>Stop endless Reels and Shorts on Instagram, YouTube, TikTok &amp; more while keeping chats, search, and regular videos open.</p>
             </div>
             <!-- Feature 3 -->
             <div class="feature-card">
                 <div class="feature-icon">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3>Schedules That Stick</h3>
-                <p>Work hours, bedtime or all-day blocks per app or site — with focus timer, strict mode and weekly screen-time reports.</p>
+                <h3>Pomodoro, Limits &amp; Strict Mode</h3>
+                <p>Run 1-tap focus sprints that block distractions, cap daily usage with shared pools, and lock in commitments with a local PIN.</p>
             </div>
         </div>
     </section>
 
-    <!-- Screenshots Gallery Section -->
+    <!-- Phone Screenshots Gallery Section -->
     <section class="screenshots-section">
         <h2 class="section-title">App Screenshots</h2>
         <div class="screenshots-container">
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-hero.webp" alt="FocusGuard: Block Reels, Shorts and apps — a focus session running" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s1-hero.webp" alt="FocusGuard: Block apps, keep focus — revamped Home dashboard" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-reels.webp" alt="FocusGuard: Stop Reels, keep the app — Reels and Shorts dashboard" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s2-reels.webp" alt="FocusGuard: Block Reels & Shorts — Instagram Reels, YouTube Shorts and TikTok rules" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-blocked.webp" alt="FocusGuard: Blocked the moment it opens — the block screen over YouTube" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s3-sites.webp" alt="FocusGuard: Block websites too — distracting domain blocker" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-schedule.webp" alt="FocusGuard: Block on a schedule — new schedule sheet" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s4-focus.webp" alt="FocusGuard: Start a Pomodoro sprint in 1 tap — Focus timer with app blocking" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-rules.webp" alt="FocusGuard: One-tap blocking plans for Reels and Shorts" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s5-schedules.webp" alt="FocusGuard: Schedules on autopilot — Workday focus, Study sprint, Sleep wind-down" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-trend.webp" alt="FocusGuard: Watch the habit shrink — 7-day short-video trend" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s6-limits.webp" alt="FocusGuard: Cap daily screen time — daily app limits, open caps and shared pools" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-usage.webp" alt="FocusGuard: See where time goes — usage dashboard" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s7-strict.webp" alt="FocusGuard: Lock in with strict mode — 1h to 7-day commitments and PIN lock" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper">
-                <img src="../../../assets/images/appblocker/listing-closer.webp" alt="FocusGuard: Every feature free — schedule detail" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/s8-closer.webp" alt="FocusGuard: Keep your time yours — 92/100 discipline score and 13-week streak heatmap" class="screenshot-img" loading="lazy">
             </div>
         </div>
     </section>
 
+    <!-- Tablet Screenshots Gallery Section -->
     <section class="screenshots-section">
         <h2 class="section-title">On tablets</h2>
         <div class="screenshots-container">
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-blocks.webp" alt="FocusGuard on tablet: Block Reels, Shorts and apps — blocks dashboard" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-01-hero.webp" alt="FocusGuard on tablet: Block apps, keep focus — Home dashboard" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-reels.webp" alt="FocusGuard on tablet: Stop Reels, keep the app — Reels and Shorts dashboard" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-02-reels.webp" alt="FocusGuard on tablet: Block Reels & Shorts — short-video rules" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-reels-trend.webp" alt="FocusGuard on tablet: Watch the scroll habit shrink — 7-day short-video trend" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-03-sites.webp" alt="FocusGuard on tablet: Block websites too — website blocker" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-schedules.webp" alt="FocusGuard on tablet: Block apps and sites on a schedule" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-04-focus.webp" alt="FocusGuard on tablet: Start a Pomodoro sprint in 1 tap" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-new-schedule.webp" alt="FocusGuard on tablet: Set it once — new schedule sheet" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-05-schedules.webp" alt="FocusGuard on tablet: Schedules on autopilot" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-shorts-blocks.webp" alt="FocusGuard on tablet: One-tap blocking plans" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-06-limits.webp" alt="FocusGuard on tablet: Cap daily screen time and shared pools" class="screenshot-img" loading="lazy">
             </div>
             <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
-                <img src="../../../assets/images/appblocker/tablet-strict-settings.webp" alt="FocusGuard on tablet: Strict mode, adult filter and keyword blocking" class="screenshot-img" loading="lazy">
+                <img src="../../../assets/images/appblocker/tablet-07-strict.webp" alt="FocusGuard on tablet: Lock in with strict mode and PIN" class="screenshot-img" loading="lazy">
+            </div>
+            <div class="screenshot-wrapper" style="flex:0 0 min(720px,90%)">
+                <img src="../../../assets/images/appblocker/tablet-08-closer.webp" alt="FocusGuard on tablet: Limits, security, backup and calm phone tools" class="screenshot-img" loading="lazy">
             </div>
         </div>
     </section>
@@ -168,18 +173,18 @@
         <div class="info-grid">
             <div class="info-left">
                 <h3>Technical Details</h3>
-                <p>We craft our apps with lightweight, efficient architecture to ensure they start immediately, run without sluggishness, and conserve battery life.</p>
-                <p>All rules, data and settings are stored locally on your device; the internet is used only to load ads.</p>
+                <p>Built with Jetpack Compose and Material 3 for instant startup, low battery impact, and clean phone and tablet layouts.</p>
+                <p>All blocking rules, usage reports, tasks, and discipline scores remain stored locally on your device. See the <a href="privacy-policy.html">privacy policy</a>.</p>
             </div>
             <div>
                 <table class="info-table">
                     <tr>
                         <td>Category</td>
-                        <td>Productivity</td>
+                        <td>Productivity · Digital wellbeing</td>
                     </tr>
                     <tr>
                         <td>Current Version</td>
-                        <td>2.0.0</td>
+                        <td>2.2.0</td>
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -187,7 +192,7 @@
                     </tr>
                     <tr>
                         <td>Permissions</td>
-                        <td>Accessibility service; optional usage access &amp; notifications; internet for ads only.</td>
+                        <td>Accessibility service; optional usage access &amp; notification access; internet for ads only.</td>
                     </tr>
                     <tr>
                         <td>Requires</td>
@@ -217,6 +222,8 @@
                 <li><a href="../../../applications/android/Pagewise/index.html">Pagewise</a></li>
                 <li><a href="../../../applications/android/AppBlocker/index.html">FocusGuard</a></li>
                 <li><a href="../../../applications/android/LifeAdmin/index.html">Life Admin</a></li>
+                <li><a href="../../../applications/android/MusicPracticeLog/index.html">Music Practice Log</a></li>
+                <li><a href="../../../applications/android/ShaadiBiodataMaker/index.html">Shaadi Biodata Maker</a></li>
             </ul>
         </div>
         <div>
@@ -226,6 +233,8 @@
                 <li><a href="../../../applications/android/Pagewise/privacy-policy.html">Pagewise</a></li>
                 <li><a href="../../../applications/android/AppBlocker/privacy-policy.html">FocusGuard</a></li>
                 <li><a href="../../../applications/android/LifeAdmin/privacy-policy.html">Life Admin</a></li>
+                <li><a href="../../../applications/android/MusicPracticeLog/privacy-policy.html">Music Practice Log</a></li>
+                <li><a href="../../../applications/android/ShaadiBiodataMaker/privacy-policy.html">Shaadi Biodata Maker</a></li>
                 <li><a href="../../../applications/android/Subtrack/privacy-policy.html">SubTrack</a></li>
             </ul>
         </div>
